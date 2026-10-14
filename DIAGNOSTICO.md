@@ -79,3 +79,10 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   Criada a **opção 11** (só leitura): numa conexão, lê 16 MB da RAM a partir de 0x4d000000
   (onde fica o pstore/ramoops do kernel) e o primeiro 1 MB de `lk`, `boot`, `tee`, `vbmeta`,
   `super` e `misc`, e compara com a ROM.
+- **14/10/2026:** o aparelho parou de aparecer no USB (nem Preloader nem BROM). Fica uma luz
+  branca acesa perto da câmera frontal, que **apaga na hora quando o cabo é desconectado**.
+  Ou seja, o aparelho funciona só com a energia do cabo. A suspeita é de bateria descarregada
+  a nível crítico (pré-carga do preloader) ou bateria sem segurar carga.
+  **Próximo passo:** 2 a 3 h no carregador de tomada, sem mexer. Se a luz continuar apagando na
+  hora sem o cabo, trocar a bateria. As gravações (V1218, slot A, preloader novo) continuam
+  no aparelho.
