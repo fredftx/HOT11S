@@ -25,7 +25,8 @@ echo   4. RESET DE FABRICA (apaga dados do usuario)
 echo   5. Reler a particao nvdata e verificar se esta vazia (so leitura)
 echo   6. Ler logs de travamento (expdb/misc) e analisar (so leitura)
 echo   7. Ler e verificar imagens de boot dos slots A e B (so leitura)
-echo   8. Sair
+echo   8. Gravar boot.img de ESTOQUE nos slots A e B (corrige o bootloop)
+echo   9. Sair
 echo.
 echo   Depois de escolher, CONECTE o cabo USB quando aparecer
 echo   "Waiting for device"/"Preloader". Se nao conectar, desligue e
@@ -40,7 +41,47 @@ if "%OP%"=="4" goto reset
 if "%OP%"=="5" goto nvdata
 if "%OP%"=="6" goto logs
 if "%OP%"=="7" goto bootimg
-if "%OP%"=="8" exit /b 0
+if "%OP%"=="8" goto gravarboot
+if "%OP%"=="9" exit /b 0
+goto menu
+
+:gravarboot
+echo.
+set "BOOTIMG=%~dp0firmware\boot.img"
+if not exist "%BOOTIMG%" (
+  echo [ERRO] Coloque o boot.img da ROM de estoque do X6812B em:
+  echo        %BOOTIMG%
+  pause
+  goto menu
+)
+if exist backup\boot_b.bin (
+  echo Imagem que esta hoje no slot B, a que trava o aparelho:
+  "%PY%" "%~dp0tools\verificar_bootimg.py" "backup\boot_b.bin"
+  echo.
+)
+echo Imagem que vai ser gravada:
+"%PY%" "%~dp0tools\verificar_bootimg.py" "%BOOTIMG%"
+if errorlevel 1 (
+  echo.
+  echo [CANCELADO] O boot.img escolhido nao passou na verificacao.
+  pause
+  goto menu
+)
+echo.
+echo  Isto grava o boot.img acima em boot_a e boot_b. Nao apaga fotos,
+echo  apps nem o IMEI. A imagem antiga do slot B esta em backup\boot_b.bin.
+echo.
+set /p CONF="Digite GRAVAR para confirmar: "
+if /i not "%CONF%"=="GRAVAR" (
+  echo Cancelado.
+  pause
+  goto menu
+)
+echo Conecte o cabo segurando VOLUME + e VOLUME - .
+"%PY%" "%MTK%" w boot_a,boot_b "%BOOTIMG%","%BOOTIMG%"
+echo.
+echo Pronto. Desconecte o cabo e ligue o aparelho segurando POWER.
+pause
 goto menu
 
 :bootimg
