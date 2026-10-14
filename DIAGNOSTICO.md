@@ -47,3 +47,7 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   novo. O kernel antigo não combina com o vendor e o super mais novos.
   **Próximo passo:** usar uma ROM de 05/2022 ou mais nova, de preferência a mais recente
   da mesma região, e gravá-la **inteira**, sem as partições de IMEI.
+- **14/10/2026:** baixada a ROM `Infinix_Hot_11S_NFC_X6812B_MT6768_OP_V1218_241128` (nov/2024).
+  Criada a **opção 9** (`tools/gravar_rom.py`). Ela monta um plano, pula as partições de
+  IMEI, o preloader e os dados do usuário, grava cada imagem nos slots A e B e desempacota
+  imagens sparse. Antes de gravar, confere se o slot ativo combina com o `super.img`.
