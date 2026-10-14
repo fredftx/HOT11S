@@ -269,52 +269,124 @@ def montar_plano(rom, gpt_txt):
     return plano, gpt
 
 
-def executar(plano, gpt, py, mtk):
-    os.makedirs(os.path.join("firmware", "raw"), exist_ok=True)
-    pequenas, grandes = [], []
-    for alvos, caminho, sparse in plano:
-        if sparse:
-            raw = os.path.join("firmware", "raw", os.path.basename(caminho) + ".raw")
-            if not os.path.exists(raw):
-                print(f"Desempacotando {os.path.basename(caminho)} (pode demorar)...")
-                desempacotar_sparse(caminho, raw + ".tmp")
-                os.replace(raw + ".tmp", raw)
-            caminho = raw
-        destino = grandes if os.path.getsize(caminho) > (512 << 20) else pequenas
-        destino.extend((a, caminho) for a in alvos)
+PEDACO = 256 << 20  # o super e gravado em pedacos de 256 MB para poder continuar de onde parou
 
+
+def dividir_em_pedacos(raw, pasta, apagar_original):
+    """Divide a imagem em arquivos de 256 MB (do fim para o comeco, encolhendo o original
+    quando ele e nosso, para nao precisar de espaco em dobro no disco)."""
+    marcador = os.path.join(pasta, "completo.txt")
+    if os.path.exists(marcador):
+        return int(open(marcador).read())
+    os.makedirs(pasta, exist_ok=True)
+    total = os.path.getsize(raw)
+    qtd = (total + PEDACO - 1) // PEDACO
+    print(f"Dividindo {os.path.basename(raw)} em {qtd} pedacos de 256 MB...")
+    with open(raw, "r+b" if apagar_original else "rb") as f:
+        for n in reversed(range(qtd)):
+            destino = os.path.join(pasta, f"{n:03d}.bin")
+            f.seek(n * PEDACO)
+            with open(destino + ".tmp", "wb") as out:
+                restante = min(PEDACO, total - n * PEDACO)
+                while restante:
+                    bloco = f.read(min(restante, 8 << 20))
+                    out.write(bloco)
+                    restante -= len(bloco)
+            os.replace(destino + ".tmp", destino)
+            if apagar_original:
+                f.truncate(n * PEDACO)
+    if apagar_original:
+        os.remove(raw)
+    with open(marcador, "w") as f:
+        f.write(str(qtd))
+    return qtd
+
+
+def rodar_mtk(cmd, grupo, chaves_por_marca, feito_txt):
+    """Roda o mtkclient mostrando a saida e salva cada gravacao confirmada na hora."""
+    print("\n" + "=" * 62)
+    print(f" Gravando {len(grupo)} item(ns): " + ", ".join(sorted({k.split('#')[0] for k in grupo})))
+    print(" Conecte o cabo segurando VOLUME + e VOLUME - .")
+    print("=" * 62)
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                            text=True, errors="replace")
+    ok = set()
+    with open(feito_txt, "a") as feito:
+        for linha in proc.stdout:
+            if linha.startswith("Progress"):
+                print(linha.rstrip("\n"), end="\r")
+                continue
+            print(linha, end="")
+            # "Wrote <arq> to sector N ..." (w)  ou  "Wrote <arq> to offset 0x... ..." (wo)
+            m = re.search(r"Wrote .+ to (sector \d+|offset 0x[0-9a-fA-F]+)", linha)
+            if m and m.group(1).lower() in chaves_por_marca:
+                chave = chaves_por_marca[m.group(1).lower()]
+                ok.add(chave)
+                feito.write(chave + "\n")
+                feito.flush()
+    proc.wait()
+    return ok
+
+
+def executar(plano, gpt, py, mtk):
+    pasta_raw = os.path.join("firmware", "raw")
+    os.makedirs(pasta_raw, exist_ok=True)
     feito_txt = os.path.join("logs", "rom_gravadas.txt")
     feitas = set(open(feito_txt).read().split()) if os.path.exists(feito_txt) else set()
-    if feitas:
-        print(f"Continuando: ja gravadas antes ({feito_txt}): {', '.join(sorted(feitas))}")
-    for grupo in (pequenas, grandes):
-        grupo = [(a, c) for a, c in grupo if a not in feitas]
-        if not grupo:
+
+    pequenas, pedacos = [], []
+    for alvos, caminho, sparse in plano:
+        grande = tamanho_real(caminho)[0] > 2 * PEDACO
+        if grande and all(a in feitas for a in alvos):
+            continue  # ja gravada inteira numa versao anterior desta ferramenta
+        raw = caminho
+        nome = os.path.basename(caminho)
+        pasta_ped = os.path.join(pasta_raw, nome + ".partes")
+        precisa_raw = sparse and not (grande and os.path.exists(os.path.join(pasta_ped, "completo.txt")))
+        if precisa_raw:
+            raw = os.path.join(pasta_raw, nome + ".raw")
+            if not os.path.exists(raw):
+                print(f"Desempacotando {nome} (pode demorar)...")
+                desempacotar_sparse(caminho, raw + ".tmp")
+                os.replace(raw + ".tmp", raw)
+        if not grande:
+            pequenas.extend((a, raw) for a in alvos)
             continue
-        print("\n" + "=" * 62)
-        print(" Gravando: " + ", ".join(a for a, _ in grupo))
-        print(" Conecte o cabo segurando VOLUME + e VOLUME - .")
-        print("=" * 62)
+        qtd = dividir_em_pedacos(raw, pasta_ped, apagar_original=sparse)
+        for a in alvos:
+            for n in range(qtd):
+                arq = os.path.join(pasta_ped, f"{n:03d}.bin")
+                pedacos.append((f"{a}#{n:03d}", gpt[a][0] + n * PEDACO, os.path.getsize(arq), arq))
+
+    if feitas:
+        print(f"Continuando de onde parou ({feito_txt}): {len(feitas)} item(ns) ja gravados.")
+
+    grupo = [(a, c) for a, c in pequenas if a not in feitas]
+    if grupo:
         cmd = [py, mtk, "w", ",".join(a for a, _ in grupo), ",".join(c for _, c in grupo)]
-        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                text=True, errors="replace")
-        saida = []
-        for linha in proc.stdout:
-            print(linha, end="")
-            saida.append(linha)
-        proc.wait()
-        texto = "".join(saida)
-        # o mtkclient escreve "Wrote <arquivo> to sector N" para cada particao gravada
-        setores = {int(n) for n in re.findall(r"Wrote .+ to sector (\d+)", texto)}
-        ok = [a for a, _ in grupo if gpt[a][0] // 512 in setores]
-        with open(feito_txt, "a") as f:
-            for a in ok:
-                f.write(a + "\n")
-        if len(ok) != len(grupo):
-            faltam = [a for a, _ in grupo if a not in ok]
+        marcas = {f"sector {gpt[a][0] // 512}": a for a, _ in grupo}
+        ok = rodar_mtk(cmd, [a for a, _ in grupo], marcas, feito_txt)
+        faltam = [a for a, _ in grupo if a not in ok]
+        if faltam:
             print(f"\n[FALHOU] Nao confirmadas: {', '.join(faltam)}")
             print("Rode a opcao 9 de novo: ela continua so com o que faltou.")
             return 1
+
+    grupo = [p for p in pedacos if p[0] not in feitas]
+    if grupo:
+        print(f"\nFaltam {len(grupo)} de {len(pedacos)} pedacos de 256 MB.")
+        script = os.path.join("logs", "rom_script.txt")
+        with open(script, "w") as f:
+            for _, ini, tam, arq in grupo:
+                f.write(f"wo {hex(ini)} {hex(tam)} {arq}\n")
+        marcas = {f"offset {hex(ini)}": chave for chave, ini, _, _ in grupo}
+        ok = rodar_mtk([py, mtk, "script", script], [c for c, _, _, _ in grupo], marcas, feito_txt)
+        faltam = [c for c, _, _, _ in grupo if c not in ok]
+        if faltam:
+            print(f"\n[FALHOU] Gravados {len(grupo) - len(faltam)} de {len(grupo)} pedacos nesta rodada.")
+            print("Rode a opcao 9 de novo: ela continua do proximo pedaco.")
+            return 1
+
     print("\n[OK] Todas as particoes gravadas.")
     return 0
 

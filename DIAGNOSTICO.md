@@ -57,3 +57,7 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   CRC conferido) mostra prioridade A=14 e B=15, ou seja, o aparelho está no **slot B**.
   A opção 9 agora também grava `backup\misc_slot_a.bin`, uma cópia do `misc` em que só mudam
   as prioridades (A=15, B=14) e o CRC.
+- **14/10/2026:** a gravação do `super` (7 GB) caía no meio e a opção 9 recomeçava do zero,
+  porque só pulava partições inteiras. Corrigido: o `super` agora é dividido em pedaços de 256 MB,
+  gravados com `wo` numa única conexão (`mtk.py script`). Cada pedaço confirmado é anotado na
+  hora em `logs\rom_gravadas.txt`, e a próxima rodada continua do pedaço seguinte.
