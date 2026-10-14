@@ -1,0 +1,5 @@
+backup/
+*.bin
+tools/venv/
+tools/mtkclient-main/
+firmware/
