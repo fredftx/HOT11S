@@ -75,3 +75,7 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
 - **14/10/2026:** o `BRLYT` real reserva uma área fixa para o preloader (0x800–0x80800, 512 KB),
   e não o tamanho exato. O preloader da V1218 (309036 bytes) cabe nela, então o cabeçalho fica
   igual. A opção 10 agora lê o descritor `BBBB` diretamente.
+- **14/10/2026:** preloader da V1218 gravado. O ciclo continua igual (Preloader a cada ~28 s).
+  Criada a **opção 11** (só leitura): numa conexão, lê 16 MB da RAM a partir de 0x4d000000
+  (onde fica o pstore/ramoops do kernel) e o primeiro 1 MB de `lk`, `boot`, `tee`, `vbmeta`,
+  `super` e `misc`, e compara com a ROM.

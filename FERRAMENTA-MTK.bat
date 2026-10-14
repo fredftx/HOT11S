@@ -28,7 +28,8 @@ echo   7. Ler e verificar imagens de boot dos slots A e B (so leitura)
 echo   8. Gravar boot.img de ESTOQUE nos slots A e B (corrige o bootloop)
 echo   9. Gravar a ROM de estoque INTEIRA (sem IMEI, preloader e dados)
 echo  10. Gravar o PRELOADER da ROM de estoque (le e compara antes)
-echo  11. Sair
+echo  11. Diagnostico pos-gravacao: RAM + conferir gravacao (so leitura)
+echo  12. Sair
 echo.
 echo   Depois de escolher, CONECTE o cabo USB quando aparecer
 echo   "Waiting for device"/"Preloader". Se nao conectar, desligue e
@@ -46,7 +47,24 @@ if "%OP%"=="7" goto bootimg
 if "%OP%"=="8" goto gravarboot
 if "%OP%"=="9" goto gravarrom
 if "%OP%"=="10" goto gravarpreloader
-if "%OP%"=="11" exit /b 0
+if "%OP%"=="11" goto verificar
+if "%OP%"=="12" exit /b 0
+goto menu
+
+:verificar
+if not exist logs mkdir logs
+echo.
+"%PY%" "%~dp0tools\verificar_gravacao.py" preparar "%~dp0firmware\rom" "logs\particoes.txt"
+echo.
+echo  Deixe o celular no ciclo de reinicio. Com o cabo conectado, segure
+echo  VOLUME + e VOLUME - juntos ate a leitura comecar. Nao desligue antes.
+"%PY%" "%MTK%" script logs\verif_script.txt
+echo.
+"%PY%" "%~dp0tools\verificar_gravacao.py" analisar "%~dp0firmware\rom" "logs\particoes.txt" > logs\verificacao.txt 2>&1
+type logs\verificacao.txt
+echo.
+echo Mande para o Claude: logs\verificacao.txt, logs\ram_pistas.txt e logs\ram_texto.txt
+pause
 goto menu
 
 :gravarpreloader
