@@ -13,6 +13,7 @@ import re
 import struct
 import subprocess
 import sys
+import zlib
 
 NAO_GRAVAR = {
     # IMEI, calibracao e seguranca: ficam como estao
@@ -163,22 +164,31 @@ def particoes_do_super(caminho):
     return nomes
 
 
-def slot_no_misc(pasta_backup):
-    """Procura a estrutura de controle A/B (magic 'BCAB') nos backups de misc/para."""
-    achados = []
-    for nome in ("misc.bin", "para.bin"):
-        caminho = os.path.join(pasta_backup, nome)
-        if not os.path.exists(caminho):
-            continue
-        dados = open(caminho, "rb").read()
-        pos = dados.find(b"BCAB")
-        if pos >= 4:
-            sufixo = dados[pos - 4:pos].split(b"\0")[0].decode("ascii", "replace")
-            achados.append(f"{nome}: controle A/B no offset 0x{pos - 4:x}, slot gravado '{sufixo}'"
-                           f"  [{dados[pos - 4:pos + 28].hex(' ')}]")
-        else:
-            achados.append(f"{nome}: sem estrutura de controle A/B")
-    return achados
+def ler_controle_ab(caminho):
+    """Le o controle A/B do Android (struct bootloader_control, magic 'BCAB') no misc.
+
+    Retorna (offset, dados_do_misc, prioridades {a: p, b: p}) ou None se nao achar/CRC errado.
+    """
+    if not os.path.exists(caminho):
+        return None
+    dados = bytearray(open(caminho, "rb").read())
+    pos = dados.find(b"BCAB") - 4
+    if pos < 0:
+        return None
+    ctrl = dados[pos:pos + 32]
+    if struct.unpack_from("<I", ctrl, 28)[0] != zlib.crc32(bytes(ctrl[:28])):
+        return None
+    prioridades = {"a": ctrl[12] & 0xF, "b": ctrl[14] & 0xF}
+    return pos, dados, prioridades
+
+
+def misc_com_slot_a(pos, dados):
+    """Copia do misc com o slot A na frente (prioridade 15) e o B logo atras (14)."""
+    novo = bytearray(dados)
+    novo[pos + 12] = (novo[pos + 12] & 0xF0) | 15
+    novo[pos + 14] = (novo[pos + 14] & 0xF0) | 14
+    struct.pack_into("<I", novo, pos + 28, zlib.crc32(bytes(novo[pos:pos + 28])))
+    return bytes(novo)
 
 
 def montar_plano(rom, gpt_txt):
@@ -231,13 +241,25 @@ def montar_plano(rom, gpt_txt):
             if so_slot_a:
                 print("  [ATENCAO] O sistema so esta no slot A. O aparelho precisa ligar pelo slot A.")
 
-    print("\n  Slot ativo hoje (do backup):")
-    slots = slot_no_misc("backup")
-    for linha in slots or ["(sem backup\\misc.bin - rode a opcao 6 antes)"]:
-        print(f"     {linha}")
-    if super_img and logicas and so_slot_a and not any("'_a'" in l for l in slots):
-        erros.append("a ROM so tem sistema no slot A, mas o aparelho nao esta (ou nao se sabe se esta) "
-                     "no slot A. Mande este plano para o Claude ajustar o slot antes de gravar.")
+    print("\n  Slot ativo hoje (do backup\\misc.bin):")
+    ctrl = ler_controle_ab(os.path.join("backup", "misc.bin"))
+    ativo = None
+    if ctrl is None:
+        print("     nao encontrado ou CRC invalido (rode a opcao 6 para reler o misc)")
+    else:
+        pos, dados, prio = ctrl
+        ativo = max(prio, key=prio.get)
+        print(f"     prioridade A={prio['a']}  B={prio['b']}  ->  slot ativo: {ativo.upper()}")
+    if super_img and logicas and so_slot_a and ativo != "a":
+        if ativo == "b" and "misc" in gpt:
+            novo = os.path.join("backup", "misc_slot_a.bin")
+            with open(novo, "wb") as f:
+                f.write(misc_com_slot_a(pos, dados))
+            plano.append((["misc"], novo, False))
+            print(f"  grava    misc               {novo}  (so troca o slot ativo para A)")
+        else:
+            erros.append("a ROM so tem sistema no slot A e nao consegui confirmar/trocar o slot ativo. "
+                         "Mande este plano para o Claude.")
 
     if erros:
         print("\n[PROBLEMAS] - NAO grave antes de resolver:")
@@ -255,7 +277,8 @@ def executar(plano, gpt, py, mtk):
             raw = os.path.join("firmware", "raw", os.path.basename(caminho) + ".raw")
             if not os.path.exists(raw):
                 print(f"Desempacotando {os.path.basename(caminho)} (pode demorar)...")
-                desempacotar_sparse(caminho, raw)
+                desempacotar_sparse(caminho, raw + ".tmp")
+                os.replace(raw + ".tmp", raw)
             caminho = raw
         destino = grandes if os.path.getsize(caminho) > (512 << 20) else pequenas
         destino.extend((a, caminho) for a in alvos)

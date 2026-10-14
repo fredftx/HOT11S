@@ -51,3 +51,9 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   Criada a **opção 9** (`tools/gravar_rom.py`). Ela monta um plano, pula as partições de
   IMEI, o preloader e os dados do usuário, grava cada imagem nos slots A e B e desempacota
   imagens sparse. Antes de gravar, confere se o slot ativo combina com o `super.img`.
+- **14/10/2026:** plano da V1218 conferido. Todos os tamanhos batem com o aparelho, mas o
+  `super.img` só tem sistema no **slot A** (`system_a`, `vendor_a`, `product_a`,
+  `system_ext_a`; os `_b` estão vazios). O `misc` (controle A/B padrão do Android, offset 0x800,
+  CRC conferido) mostra prioridade A=14 e B=15, ou seja, o aparelho está no **slot B**.
+  A opção 9 agora também grava `backup\misc_slot_a.bin`, uma cópia do `misc` em que só mudam
+  as prioridades (A=15, B=14) e o CRC.
