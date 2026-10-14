@@ -58,12 +58,12 @@ echo.
 echo.
 echo  Deixe o celular no ciclo de reinicio. Com o cabo conectado, segure
 echo  VOLUME + e VOLUME - juntos ate a leitura comecar. Nao desligue antes.
-"%PY%" "%MTK%" script logs\verif_script.txt
+powershell -NoProfile -Command "& '%PY%' '%MTK%' script 'logs\verif_script.txt' 2>&1 | Tee-Object -FilePath 'logs\verif_mtk.txt'"
 echo.
 "%PY%" "%~dp0tools\verificar_gravacao.py" analisar "%~dp0firmware\rom" "logs\particoes.txt" > logs\verificacao.txt 2>&1
 type logs\verificacao.txt
 echo.
-echo Mande para o Claude: logs\verificacao.txt, logs\ram_pistas.txt e logs\ram_texto.txt
+echo Mande para o Claude: logs\verif_mtk.txt, logs\verificacao.txt, logs\ram_pistas.txt e logs\ram_texto.txt
 pause
 goto menu
 
