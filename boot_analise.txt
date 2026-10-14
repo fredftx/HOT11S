@@ -1,0 +1,19 @@
+
+== boot_a.bin  5439488 bytes  sha256 a9ae623d9c0d7abe
+   header v2, kernel 9699605 bytes, ramdisk 16716502 bytes, Android 11.0.0, patch 2099-12
+   ARQUIVO INCOMPLETO: precisa de 26419926 bytes, tem 5439488 - leia de novo
+
+== vendor_boot_a.bin  67108864 bytes  sha256 3b6a07d0d404fab4
+   vazio (zerado) - normal neste aparelho: o ramdisk fica dentro do boot (header v2)
+
+== boot_b.bin  6750208 bytes  sha256 d2a2fc57ec0edef1
+   header v2, kernel 9699605 bytes, ramdisk 16716502 bytes, Android 11.0.0, patch 2099-12
+   ARQUIVO INCOMPLETO: precisa de 26419926 bytes, tem 6750208 - leia de novo
+
+== vendor_boot_b.bin  67108864 bytes  sha256 3b6a07d0d404fab4
+   vazio (zerado) - normal neste aparelho: o ramdisk fica dentro do boot (header v2)
+
+================ RESUMO ================
+ Slot A: COM PROBLEMA
+ Slot B: COM PROBLEMA
+ (O celular estava tentando ligar pelo slot B.)

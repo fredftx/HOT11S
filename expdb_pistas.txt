@@ -1,0 +1,1630 @@
+===== Bateria / energia (407) =====
+[    0.000000] -(0)[0:swapper]Kernel command line: console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+[    0.221257]  (7)[1:swapper/0]mt_charger_probe
+[    0.221439]  (7)[1:swapper/0]mt_charger_probe KPOC(0)
+[    0.221801]  (6)[1:swapper/0]mt_charger_probe done
+[    0.261026]  (6)[1:swapper/0][low_battery_protect_init] 3400 mV, 3250 mV, 3100 mV Done
+[    0.261210]  (6)[1:swapper/0][battery_oc_protect_init] 4670 mA, 5500 mA Done
+[    0.261452]  (6)[1:swapper/0]POWER_UVLO_VOLT_LEVEL = 2600, RG_UVLO_VTHL = 0x2
+[    0.354100]  (6)[1:swapper/0][register_low_battery_notify] prio_val=2
+[    0.354106]  (6)[1:swapper/0][register_battery_percent_notify] prio_val=2
+[    0.354112]  (6)[1:swapper/0][register_battery_oc_notify] prio_val=2
+[    0.354308]  (6)[1:swapper/0][register_battery_percent_notify] prio_val=1
+[    0.354313]  (6)[1:swapper/0][register_battery_oc_notify] prio_val=1
+[    0.354318]  (6)[1:swapper/0][register_low_battery_notify] prio_val=1
+[    0.383123]  (6)[1:swapper/0][register_low_battery_notify] prio_val=5
+[    0.383129]  (6)[1:swapper/0][register_battery_percent_notify] prio_val=5
+[    0.383136]  (6)[1:swapper/0][register_battery_oc_notify] prio_val=5
+[    0.480726]  (6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown init
+[    0.480736]  (6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown register ltf
+[    0.480869]  (6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown init
+[    0.480874]  (6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown register ltf
+[    0.524903]  (7)[1:swapper/0][fgauge_get_profile_id]battery_id_voltage is 1291000
+[    0.524909]  (7)[1:swapper/0][fgauge_get_profile_id]Battery id (2)
+[    0.525028]  (7)[1:swapper/0][fgauge_get_profile_id]battery_id_voltage is 1291000
+[    0.525034]  (7)[1:swapper/0][fgauge_get_profile_id]Battery id (2)
+[    0.525046]  (7)[1:swapper/0]Get MULTI_BATTERY failed
+[    0.525113]  (7)[1:swapper/0]Get SHUTDOWN_SYSTEM_IBOOT failed
+[    0.525121]  (7)[1:swapper/0]Get NO_BAT_TEMP_COMPENSATE failed
+[    0.525286]  (7)[1:swapper/0]Get DIFF_BAT_TEMP_SETTING failed
+[    0.525292]  (7)[1:swapper/0]Get DIFF_BAT_TEMP_SETTING_C failed
+[    0.525337]  (7)[1:swapper/0]Get VBAT2_DET_TIME failed
+[    0.525343]  (7)[1:swapper/0]Get VBAT2_DET_COUNTER failed
+[    0.525349]  (7)[1:swapper/0]Get VBAT2_DET_VOLTAGE1 failed
+[    0.525355]  (7)[1:swapper/0]Get VBAT2_DET_VOLTAGE2 failed
+[    0.525361]  (7)[1:swapper/0]Get VBAT2_DET_VOLTAGE3 failed
+[    0.525431]  (7)[1:swapper/0]Get PMIC_SHUTDOWN_SW_EN failed
+[    0.525463]  (7)[1:swapper/0]Get SHUTDOWN_GAUGE0 failed
+[    0.525470]  (7)[1:swapper/0]Get SHUTDOWN_GAUGE1_XMINS failed
+[    0.525478]  (7)[1:swapper/0]Get SHUTDOWN_GAUGE1_VBAT failed
+[    0.525547]  (7)[1:swapper/0]Get VBAT_OLDOCV_DIFF failed
+[    0.525559]  (7)[1:swapper/0]Get PMIC_SHUTDOWN_TIME failed
+[    0.525684]  (7)[1:swapper/0]Get BATTERY_TMP_TO_DISABLE_GM30 failed
+[    0.525690]  (7)[1:swapper/0]Get BATTERY_TMP_TO_DISABLE_NAFG failed
+[    0.525697]  (7)[1:swapper/0]Get BATTERY_TMP_TO_ENABLE_NAFG failed
+[    0.525817]  (7)[1:swapper/0]Get MOVING_BATTEMP_EN failed
+[    0.525823]  (7)[1:swapper/0]Get MOVING_BATTEMP_THR failed
+[    0.525829]  (7)[1:swapper/0]Get DISABLE_MTKBATTERY failed
+[    0.525953]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 2
+[    0.526006]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 6
+[    0.526058]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 10
+[    0.526110]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 14
+[    0.526162]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 18
+[    0.526215]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 22
+[    0.526267]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 26
+[    0.526318]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 30
+[    0.526370]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 34
+[    0.526422]  (7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 38
+[    0.526442]  (7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t0, 100, column:3
+[    0.526963]  (7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t1, 100, column:3
+[    0.527533]  (7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t2, 100, column:3
+[    0.528150]  (7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t3, 100, column:3
+[    0.528873]  (7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t4, 100, column:3
+[    0.529585]  (7)[1:swapper/0]Get battery2_profile_t5_num failed
+[    0.529593]  (7)[1:swapper/0]Get battery2_profile_t5_col failed
+[    0.529600]  (7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t5, 100, column:3
+[    0.529608]  (7)[1:swapper/0][fg_custom_parse_table] cannot find battery2_profile_t5 in dts
+[    0.530904]  (7)[1:swapper/0][pmic_register_interrupt_callback] intNo=116, callback=fg_bat_temp_int_h_handler
+[    0.530911]  (7)[1:swapper/0][pmic_register_interrupt_callback] intNo=117, callback=fg_bat_temp_int_l_handler
+[    0.530918]  (7)[1:swapper/0][pmic_register_interrupt_callback] intNo=114, callback=fg_vbat2_h_int_handler
+[    0.530925]  (7)[1:swapper/0][pmic_register_interrupt_callback] intNo=115, callback=fg_vbat2_l_int_handler
+[    0.530949]  (7)[1:swapper/0][read_boot_battery_plug_out_status] rtc_invalid 1 plugout 1 bat_plug_out_time 31 sp3:0x0 pl:0 0
+[    0.531136]  (7)[1:swapper/0][BAT_probe] power_supply_register Battery Success !!
+[    0.531207]  (7)[1:swapper/0] shutdown_time = 1743 len 1 shutdown_time_tmp 1 pl_shutdown_time[1]
+[    0.531686]  (6)[322:battery_thread]vbat_out_old=40680, vthr=696, T_curr=363, vbat_out=40708
+[    0.531692]  (7)[1:swapper/0][battery_init] Initialization : DONE
+[    0.531910]  (6)[322:battery_thread][CH3_DBG] bat_cur = 2844
+[    0.532460]  (6)[322:battery_thread]mtk_bif_is_hw_exist: do not have bif driver
+[    0.542948]  (6)[1:swapper/0]tran_battery_driver_init uisoc=-1
+[    0.543424]  (6)[1:swapper/0]******** battery_meter_probe!! ********
+[    0.543703]  (6)[1:swapper/0][tran_battery_driver_init] done
+[    0.544852] -(6)[50:kworker/6:1] charger_dev_get_boost_status+0x20/0x34
+[    0.547172]  (7)[1:swapper/0][pmic_register_interrupt_callback] intNo=40, callback=msdc_sd_power_off
+[    0.585820]  (7)[58:kworker/7:1]mtk_pmic_enable_chr_type_det charger type: charger IN
+[    0.640728]  (6)[1:swapper/0]mtk_charger_probe: starts
+[    0.640733]  (6)[1:swapper/0]mtk_charger_parse_dt: starts
+[    0.640742]  (6)[1:swapper/0]Found primary charger [rt9471_chg]
+[    0.640772]  (6)[1:swapper/0]mtk_charger_parse_dt:1 2 4100000 4100000 4400000 4400000 4400000 4400000
+[    0.640840]  (6)[1:swapper/0]use default BC12_CHARGER:0
+[    0.640849]  (6)[1:swapper/0]use default wireless_charger_current:500000
+[    0.640859]  (6)[1:swapper/0]mtk_charger_start_timer: alarm timer start:0, 10 636317307
+[    0.641026]  (6)[1:swapper/0]mtk_charger_get_atm_mode: atm_enabled = 0
+[    0.658238]  (2)[355:charger_thread]vbat_out_old=37280, vthr=695, T_curr=368, vbat_out=37307
+[    0.658868]  (2)[355:charger_thread][CH3_DBG] bat_cur = -30
+[    0.661789]  (2)[355:charger_thread]Vbat=3731,Ibat=6,I=0,VChr=4986,T=40,Soc=-1:-1,CT:0:0 hv:1 pd:0:0
+[    0.662008]  (2)[355:charger_thread][CH3_DBG] bat_cur = 0
+[    0.664225]  (2)[355:charger_thread]vbat_out_old=37280, vthr=695, T_curr=368, vbat_out=37307
+[    0.664241]  (2)[355:charger_thread]rt9471 5-0053: __rt9471_set_mivr mivr = 4200000(0x03)
+[    1.430583] -(0)[1:init]<2>[1429173233] mtk_wdt_shutdown+0x10/0x18
+_VBATON_UNDET
+VBATON_UNDET
+TBATTERY_S
+mt_charger_set_property
+battery_get_property
+5LOW_BAT_VOLT:vbat %d %d
+battery_get_uisoc
+ta_start_battery_soc
+pd_stop_battery_soc
+ta_stop_battery_soc
+pe40_stop_battery_soc
+battery_get_soc
+mtk_charger_alarm_timer_func
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_battery.c
+drivers/power/supply/mediatek/battery/mtk_battery.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_charger.c
+drivers/misc/mediatek/thermal/mtk_cooler_shutdown.c
+Modules linked in: apie 139: enable=1URE]Create proc entry[gesture_state] success!ogoMIPS (lpj=52000)swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt67
+battery_aging_module0
+SHUTDOWN_GAUGE0
+BATTERY_TMP_TO_DISABLE_GM30
+poweroff(o)
+poweroff_powercycle
+show_reset_battery_cycle
+store_reset_battery_cycle
+shutdown_condition_enable
+fuel_gauge_enable
+show_shutdown_cond_enable
+store_shutdown_cond_enable
+fuel gauge
+battery_get_bat_voltage
+max_charger_voltage
+min_charger_voltage
+ADC_Charger_Voltage
+Power_Off_Voltage
+mtk_charger_get_atm_mode
+tran_battery_probe
+mtktscharger_pdrv_probe
+mt_charger_probe
+mtk_charger_probe
+cap-power-off-card
+fuel_gauge_period
+set_shutdown_cond
+get_shutdown_cond
+disable_shutdown_cond
+battery_suspend
+usb_charger_current_suspend
+mtk_battery_cmd
+MULTI_BATTERY
+DISABLE_MTKBATTERY
+BATTERY_QMAX
+g_SHUTDOWN_HL_ZCV
+FG_INTR_CHARGER_OUT
+SHUTDOWN_SYSTEM_IBOOT
+SHUTDOWN_SENT
+SHUTDOWN_ACK_SENT
+USB_CHARGER_PRESENT
+USB_CHARGER_ABSENT
+PMIC_SHUTDOWN_CURRENT
+FG_INTR_BAT_TEMP_LT
+has_battery_removed
+console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt6769 mem_index=11 mtk_printk_ctrl.disable_uart=0 mtk_printk_ctrl.disable_uart=1 androidboot.serialno=073262525B000692 rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=1 usb2jtag_mode=0 androidboot.dtb_idx=0 androidboot.dtbo_idx=0
+mt_charger_plugin
+charger_in
+rbat_temperature_table_num
+battery%d_profile_t%d_num
+charger_ftm
+battery service reboot system
+charger_ftm_compat_ioctl
+charger_ftm_ioctl
+battery%d_profile_t%d_col
+tran_charger_full
+show_battery_percent_level
+store_battery_percent_level
+show_low_battery_protect_level
+store_low_battery_protect_level
+battery_percent_protect_level
+show_battery_oc_protect_level
+store_battery_oc_protect_level
+show_charger_log_level
+store_charger_log_level
+batteryID-channel
+fg_bat_temp_int_internal
+cfg80211_shutdown_all_interfaces
+-(0)[0:swapper]Kernel command line: console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+(7)[1:swapper/0]mt_charger_probe
+(7)[1:swapper/0]mt_charger_probe KPOC(0)
+(6)[1:swapper/0]mt_charger_probe done
+(6)[1:swapper/0][low_battery_protect_init] 3400 mV, 3250 mV, 3100 mV Done
+(6)[1:swapper/0][battery_oc_protect_init] 4670 mA, 5500 mA Done
+(6)[1:swapper/0]POWER_UVLO_VOLT_LEVEL = 2600, RG_UVLO_VTHL = 0x2
+(6)[1:swapper/0][register_low_battery_notify] prio_val=2
+(6)[1:swapper/0][register_battery_percent_notify] prio_val=2
+(6)[1:swapper/0][register_battery_oc_notify] prio_val=2
+(6)[1:swapper/0][register_battery_percent_notify] prio_val=1
+(6)[1:swapper/0][register_battery_oc_notify] prio_val=1
+(6)[1:swapper/0][register_low_battery_notify] prio_val=1
+(6)[1:swapper/0][register_low_battery_notify] prio_val=5
+(6)[1:swapper/0][register_battery_percent_notify] prio_val=5
+(6)[1:swapper/0][register_battery_oc_notify] prio_val=5\1
+(6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown init
+(6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown register ltf
+(6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown init
+(6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown register ltfC\
+(7)[1:swapper/0][fgauge_get_profile_id]battery_id_voltage is 1291000
+(7)[1:swapper/0][fgauge_get_profile_id]Battery id (2)
+(7)[1:swapper/0][fgauge_get_profile_id]battery_id_voltage is 1291000
+(7)[1:swapper/0][fgauge_get_profile_id]Battery id (2)
+(7)[1:swapper/0]Get MULTI_BATTERY failed
+(7)[1:swapper/0]Get SHUTDOWN_SYSTEM_IBOOT failed
+(7)[1:swapper/0]Get NO_BAT_TEMP_COMPENSATE failed
+(7)[1:swapper/0]Get DIFF_BAT_TEMP_SETTING failed
+(7)[1:swapper/0]Get DIFF_BAT_TEMP_SETTING_C failed
+(7)[1:swapper/0]Get VBAT2_DET_TIME failed
+(7)[1:swapper/0]Get VBAT2_DET_COUNTER failed
+(7)[1:swapper/0]Get VBAT2_DET_VOLTAGE1 failed
+(7)[1:swapper/0]Get VBAT2_DET_VOLTAGE2 failed
+(7)[1:swapper/0]Get VBAT2_DET_VOLTAGE3 failed
+(7)[1:swapper/0]Get PMIC_SHUTDOWN_SW_EN failed
+(7)[1:swapper/0]Get SHUTDOWN_GAUGE0 failed
+(7)[1:swapper/0]Get SHUTDOWN_GAUGE1_XMINS failed
+(7)[1:swapper/0]Get SHUTDOWN_GAUGE1_VBAT failed
+(7)[1:swapper/0]Get VBAT_OLDOCV_DIFF failed
+(7)[1:swapper/0]Get PMIC_SHUTDOWN_TIME failed
+(7)[1:swapper/0]Get BATTERY_TMP_TO_DISABLE_GM30 failed
+(7)[1:swapper/0]Get BATTERY_TMP_TO_DISABLE_NAFG failed
+(7)[1:swapper/0]Get BATTERY_TMP_TO_ENABLE_NAFG failed
+(7)[1:swapper/0]Get MOVING_BATTEMP_EN failed
+(7)[1:swapper/0]Get MOVING_BATTEMP_THR failed
+(7)[1:swapper/0]Get DISABLE_MTKBATTERY failed
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 2
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 6
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 10
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 14
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 18
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 22
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 26
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 30
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 34
+(7)[1:swapper/0]Get g_SHUTDOWN_HL_ZCV failed, idx 38
+(7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t0, 100, column:3
+(7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t1, 100, column:3
+(7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t2, 100, column:3
+(7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t3, 100, column:3
+(7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t4, 100, column:3
+(7)[1:swapper/0]Get battery2_profile_t5_num failed
+(7)[1:swapper/0]Get battery2_profile_t5_col failed
+(7)[1:swapper/0]fg_custom_parse_table: battery2_profile_t5, 100, column:3
+(7)[1:swapper/0][fg_custom_parse_table] cannot find battery2_profile_t5 in dts
+(7)[1:swapper/0][pmic_register_interrupt_callback] intNo=116, callback=fg_bat_temp_int_h_handler
+(7)[1:swapper/0][pmic_register_interrupt_callback] intNo=117, callback=fg_bat_temp_int_l_handler
+(7)[1:swapper/0][pmic_register_interrupt_callback] intNo=114, callback=fg_vbat2_h_int_handler
+(7)[1:swapper/0][pmic_register_interrupt_callback] intNo=115, callback=fg_vbat2_l_int_handler
+(7)[1:swapper/0][read_boot_battery_plug_out_status] rtc_invalid 1 plugout 1 bat_plug_out_time 31 sp3:0x0 pl:0 04
+(7)[1:swapper/0][BAT_probe] power_supply_register Battery Success !!
+(7)[1:swapper/0] shutdown_time = 1743 len 1 shutdown_time_tmp 1 pl_shutdown_time[1]
+(6)[322:battery_thread]vbat_out_old=40680, vthr=696, T_curr=363, vbat_out=40708a
+(7)[1:swapper/0][battery_init] Initialization : DONE
+(6)[322:battery_thread][CH3_DBG] bat_cur = 2844
+(6)[322:battery_thread]mtk_bif_is_hw_exist: do not have bif driver
+(6)[1:swapper/0]tran_battery_driver_init uisoc=-1
+(6)[1:swapper/0]******** battery_meter_probe!! ********V
+(6)[1:swapper/0][tran_battery_driver_init] done
+-(6)[50:kworker/6:1] charger_dev_get_boost_status+0x20/0x34
+(7)[1:swapper/0][pmic_register_interrupt_callback] intNo=40, callback=msdc_sd_power_off
+(7)[58:kworker/7:1]mtk_pmic_enable_chr_type_det charger type: charger IN
+(6)[1:swapper/0]mtk_charger_probe: starts
+(6)[1:swapper/0]mtk_charger_parse_dt: starts
+(6)[1:swapper/0]Found primary charger [rt9471_chg]
+(6)[1:swapper/0]mtk_charger_parse_dt:1 2 4100000 4100000 4400000 4400000 4400000 4400000
+(6)[1:swapper/0]use default BC12_CHARGER:0
+(6)[1:swapper/0]use default wireless_charger_current:500000T
+(6)[1:swapper/0]mtk_charger_start_timer: alarm timer start:0, 10 636317307
+(6)[1:swapper/0]mtk_charger_get_atm_mode: atm_enabled = 0
+tcpc_power_off
+charger_in
+battery_threadB
+charger_threada
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 0 do_init_fgadc_reset 1 fg_curr_time 33 fg_soff_valid:0 		shutdown_pmic_time 33 hw_id 0x5831 sw_id 0x5820, 3729 0 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=3729 mV with 0 mV, VCHR 5014 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=3729 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=1
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x0
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 0 do_init_fgadc_reset 1 fg_curr_time 33 fg_soff_valid:0 		shutdown_pmic_time 33 hw_id 0x5831 sw_id 0x5820, 3727 0 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=3727 mV with 0 mV, VCHR 5014 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=3727 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=1
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x0
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 1 do_init_fgadc_reset 0 fg_curr_time 90 fg_soff_valid:1 		shutdown_pmic_time 3 hw_id 0x5831 sw_id 0x5820, 4297 87 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=4297 mV with 0 mV, VCHR 4532 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=4297 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=0
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x57
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 0 do_init_fgadc_reset 1 fg_curr_time 33 fg_soff_valid:0 		shutdown_pmic_time 33 hw_id 0x5831 sw_id 0x5820, 3729 0 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=3729 mV with 0 mV, VCHR 5014 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=3729 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=1
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x0
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 0 do_init_fgadc_reset 1 fg_curr_time 33 fg_soff_valid:0 		shutdown_pmic_time 33 hw_id 0x5831 sw_id 0x5820, 3727 0 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=3727 mV with 0 mV, VCHR 5014 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=3727 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=1
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x0
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 0 do_init_fgadc_reset 1 fg_curr_time 5 fg_soff_valid:1 		shutdown_pmic_time 4 hw_id 0x5831 sw_id 0x5820, 4286 1 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=4286 mV with 0 mV, VCHR 4957 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=4286 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=1
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x1
+[1241] [is_force_boot] Bypass Kernel Power off charging mode and enter Normal Boot
+[1242] [kernel_power_off_charging_detection] Turn off HW Led
+[1249] T_curr = 357, vbat_old = 42000, vbat_auxcali = 42027, vbat_bgrcali = 42027
+[1251] get_bat_volt, vbat=4202 0
+[1252] is_low_battery, FALSE
+[1291] T_curr = 363, vbat_old = 41460, vbat_auxcali = 41489, vbat_bgrcali = 41489
+[1293] get_bat_volt, vbat=4148 0
+[1580] backlight enabled before battery init
+[1680] [PROFILE] ::: lvl(3) charger init takes 68 ms
+[1686] charger_enable_charging: disable charging
+[1691] T_curr = 363, vbat_old = 37460, vbat_auxcali = 37486, vbat_bgrcali = 37486
+[1693] get_bat_volt, vbat=3748 1
+[1749] T_curr = 363, vbat_old = 37395, vbat_auxcali = 37421, vbat_bgrcali = 37421
+[1758] [check_sw_ocv]1 ptim[37421 6] fg_swocv[37421 6] boot_vbat:4286 shutdowntime:1 vbat:3748 tmp:38
+[1761] charger_enable_charging: enable charging
+[1766] T_curr = 363, vbat_old = 40760, vbat_auxcali = 40788, vbat_bgrcali = 40788
+[1768] get_bat_volt, vbat=4078 1
+[1768] [check_low_battery] g_boot_mode=0
+[1769] is_low_battery, FALSE
+[1769] sale tool : lk find plug out battery!
+[1776] [PROFILE] ::: lvl(3) charger start takes 14 ms
+[1779] charger_enable_charging: disable charging
+[1923] bat_low_vol = 3400 ,low_battery_flag = 1
+[1927] T_curr = 368, vbat_old = 33690, vbat_auxcali = 33714, vbat_bgrcali = 33714
+[1929] get_bat_volt, vbat=3371 1
+[1930] [check_bat_protect_status]: check VBAT=3371 mV with 3400 mV
+[1958] charger_type: 4
+[23104] T_curr = 363, vbat_old = 37620, vbat_auxcali = 37646, vbat_bgrcali = 37646
+[23107] get_bat_volt, vbat=3764 1
+[23107] [check_bat_protect_status]: check VBAT=3764 mV with 3400 mV, start charging...
+[23114] charger_enable_charging: enable charging
+[23116] [PROFILE] ::: lvl(2) battery init takes 21504 ms
+[29725] shutdown_time buf [1], [0x4c5b8088:0x4c5b8089:1]
+[29934]        : irmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboo
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 0 do_init_fgadc_reset 1 fg_curr_time 33 fg_soff_valid:0 		shutdown_pmic_time 33 hw_id 0x5831 sw_id 0x5820, 3728 0 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=3728 mV with 0 mV, VCHR 5014 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=3728 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=1
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x0
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[fg_init] fg_reset_status 0 do_init_fgadc_reset 1 fg_curr_time 5 fg_soff_valid:1 		shutdown_pmic_time 4 hw_id 0x5831 sw_id 0x5820, 4287 1 0x1 0x2329 1 0
+[pl_check_bat_protect_status]: check VBAT=4286 mV with 0 mV, VCHR 4948 mV ,VCHR_HV=6500  start charging...
+[pl_check_bat_protect_status]: check VBAT=4286 mV with 0 mV, stop charging...
+[pl_battery_init] is_fg_init: 1 , skip init
+#T#Battery detect=1
+[mt_charger_type_detection] Got data !!, 0, 1
+shutdown_time: 0x1
+[1242] [is_force_boot] Bypass Kernel Power off charging mode and enter Normal Boot
+[1243] [kernel_power_off_charging_detection] Turn off HW Led
+[1250] T_curr = 357, vbat_old = 42000, vbat_auxcali = 42027, vbat_bgrcali = 42027
+[1252] get_bat_volt, vbat=4202 0
+[1253] is_low_battery, FALSE
+[1292] T_curr = 363, vbat_old = 41600, vbat_auxcali = 41629, vbat_bgrcali = 41629
+[1294] get_bat_volt, vbat=4162 0
+[1582] backlight enabled before battery init
+[1681] [PROFILE] ::: lvl(3) charger init takes 68 ms
+[1687] charger_enable_charging: disable charging
+[1692] T_curr = 363, vbat_old = 37470, vbat_auxcali = 37496, vbat_bgrcali = 37496
+[1694] get_bat_volt, vbat=3749 1
+[1750] T_curr = 363, vbat_old = 37405, vbat_auxcali = 37431, vbat_bgrcali = 37431
+[1759] [check_sw_ocv]1 ptim[37431 0] fg_swocv[37431 0] boot_vbat:4287 shutdowntime:1 vbat:3749 tmp:38
+[1762] charger_enable_charging: enable charging
+[1767] T_curr = 363, vbat_old = 40780, vbat_auxcali = 40808, vbat_bgrcali = 40808
+[1769] get_bat_volt, vbat=4080 1
+[1769] [check_low_battery] g_boot_mode=0
+[1770] is_low_battery, FALSE
+[1770] sale tool : lk find plug out battery!
+[1778] [PROFILE] ::: lvl(3) charger start takes 15 ms
+[1780] charger_enable_charging: disable charging
+[1924] bat_low_vol = 3400 ,low_battery_flag = 1
+[1928] T_curr = 368, vbat_old = 33720, vbat_auxcali = 33744, vbat_bgrcali = 33744
+[1930] get_bat_volt, vbat=3374 1
+[1931] [check_bat_protect_status]: check VBAT=3374 mV with 3400 mV
+[1959] charger_type: 4
+[23084] T_curr = 363, vbat_old = 37620, vbat_auxcali = 37646, vbat_bgrcali = 37646
+[23086] get_bat_volt, vbat=3764 1
+[23086] [check_bat_protect_status]: check VBAT=3764 mV with 3400 mV, start charging...
+[23094] charger_enable_charging: enable charging
+[23095] [PROFILE] ::: lvl(2) battery init takes 21482 ms
+[29704] shutdown_time buf [1], [0x4c5b8088:0x4c5b8089:1]
+[29913]        : irmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboo
+
+===== Kernel panic / crash (70) =====
+[    0.000000] -(0)[0:swapper]Kernel command line: console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+[    0.109239]  (1)[1:swapper/0]ramoops: using module parameters
+[    0.109322]  (1)[1:swapper/0]ramoops: pstore:address is 0x4d010000, size is 0xe0000, console_size is 0x40000, pmsg_size is 0x10000
+[    0.113915]  (1)[1:swapper/0]pstore: Registered ramoops as persistent store backend
+[    0.113925]  (1)[1:swapper/0]ramoops: attached 0xe0000@0x4d010000, ecc: 0/0
+[    0.122866]  (6)[1:swapper/0]mrdump_panic_init: Full ramdump disabled, version  not matched.
+[    0.647852] -(6)[1:swapper/0]Kernel panic - not syncing: Could not decompress initial ramdisk image.
+[    0.647926] -(6)[1:swapper/0] ipanic+0xa0/0xcc
+[    0.647935] -(6)[1:swapper/0] panic+0x14c/0x280
+[    0.609066] -(7)[1:swapper/0]Kernel panic - not syncing: Could not decompress initial ramdisk image.
+[    0.609138] -(7)[1:swapper/0] ipanic+0xa0/0xcc
+[    0.609147] -(7)[1:swapper/0] panic+0x14c/0x280
+[    0.667664] -(7)[1:swapper/0]Kernel panic - not syncing: Could not decompress initial ramdisk image.
+[    0.667796] -(7)[1:swapper/0] ipanic+0xa0/0xcc
+[    0.667813] -(7)[1:swapper/0] panic+0x14c/0x280
+[    0.590809] -(6)[1:swapper/0]Kernel panic - not syncing: Could not decompress initial ramdisk image.
+[    0.590880] -(6)[1:swapper/0] ipanic+0xa0/0xcc
+[    0.590889] -(6)[1:swapper/0] panic+0x14c/0x280
+Kernel Panic
+kpanic
+memblock_virt_alloc_try_nid_nopanic
+kpanic
+audit_panic
+skb_over_panic
+skb_under_panic
+unknown_nmi_panic
+%cerrors=panic
+,errors=panic
+Kernel NestedPanic
+Kernel Panic
+oops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt67
+ops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+Modules linked in: apie 139: enable=1URE]Create proc entry[gesture_state] success!ogoMIPS (lpj=52000)swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt67
+6Raise a panic, cannot resume.
+current-ke-console
+current-ke-mmprofile
+aee_oops_free
+ramoops.mem_address
+ramoops.mem_size
+ramoops.pmsg_size
+ramoops.console_size
+kernel_panic
+console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt6769 mem_index=11 mtk_printk_ctrl.disable_uart=0 mtk_printk_ctrl.disable_uart=1 androidboot.serialno=073262525B000692 rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=1 usb2jtag_mode=0 androidboot.dtb_idx=0 androidboot.dtbo_idx=0
+KE,6639!6"Q3(!                                               "'..6!
+current-ke-android_main
+panic_on_oom
+current-ke-android_system
+panic_on_rcu_stall
+6%s: oops->userthread_maps.Userthread_maps Vmalloc fail
+6%s: oops->userthread_stack.Userthread_Stack Vmalloc fail
+panic_mask
+fortify_panic
+[<ffffff95234b4284>] panic+0x148/0x280
+[<ffffff9523c36020>] ipanic+0x90/0xcc
+-(0)[0:swapper]Kernel command line: console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+(1)[1:swapper/0]ramoops: using module parameters
+(1)[1:swapper/0]ramoops: pstore:address is 0x4d010000, size is 0xe0000, console_size is 0x40000, pmsg_size is 0x10000
+(1)[1:swapper/0]pstore: Registered ramoops as persistent store backend
+(1)[1:swapper/0]ramoops: attached 0xe0000@0x4d010000, ecc: 0/0
+(6)[1:swapper/0]mrdump_panic_init: Full ramdump disabled, version  not matched.x
+-(6)[1:swapper/0]Kernel panic - not syncing: Could not decompress initial ramdisk image.7
+-(6)[1:swapper/0] ipanic+0xa0/0xcc
+-(6)[1:swapper/0] panic+0x14c/0x280
+&oops_in_progress: 0x%llx
+[29937]        : t.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_si
+[29940]        : ze=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram
+[29954]        : tk_printk_ctrl.disable_uart=1 androidboot.serialno=xxxxxxxxxxxxxxxx rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=
+[29916]        : t.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_si
+[29919]        : ze=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram
+[29933]        : tk_printk_ctrl.disable_uart=1 androidboot.serialno=xxxxxxxxxxxxxxxx rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=
+
+===== Watchdog / travamento (123) =====
+[    0.126877]  (6)[1:swapper/0]mtk wdt driver probe ..
+[    0.532321]  (7)[1:swapper/0]rt9471 5-0053: rt9471_irq_unmask irq(29, wdt)
+[    0.647458]  (0)[147:kworker/u16:1][wdk] WDT start kicker done CPU_NR=8
+[    0.651537] -(6)[1:swapper/0]****************dump wdt reg start*************
+[    0.653673] -(6)[1:swapper/0]****************dump wdt reg end*************
+[    0.655024] -(6)[1:swapper/0]wdt_arch_reset: disable pwrap before wdt reset
+[    0.616394] -(7)[1:swapper/0]****************dump wdt reg start*************
+[    0.618695] -(7)[1:swapper/0]****************dump wdt reg end*************
+[    0.620047] -(7)[1:swapper/0]wdt_arch_reset: disable pwrap before wdt reset
+[    0.682195] -(7)[1:swapper/0]****************dump wdt reg start*************
+[    0.685011] -(7)[1:swapper/0]****************dump wdt reg end*************
+[    0.687193] -(7)[1:swapper/0]wdt_arch_reset: disable pwrap before wdt reset
+[    0.578094]  (4)[147:kworker/u16:1][wdk] WDT start kicker done CPU_NR=8
+[    0.598110] -(6)[1:swapper/0]****************dump wdt reg start*************
+[    0.600244] -(6)[1:swapper/0]****************dump wdt reg end*************
+[    0.601659] -(6)[1:swapper/0]wdt_arch_reset: disable pwrap before wdt reset
+[    1.430597] -(0)[1:init]****************dump wdt reg end*************
+[    1.431564] -(0)[1:init]wdt_arch_reset: disable pwrap before wdt reset
+hang detect time out: 0x%x
+WDT status: %d
+drivers/watchdog/mediatek/wdk/wd_common_drv.c
+6wdt_arch_reset: disable pwrap before wdt reset
+[    0.655024] -(6)[1:swapper/0]wdt_arch_reset: disable pwrap before wdt reset
+6[ccci%d/mcd]WDT IRQ occur.
+[%d]WDT IRQ occur.
+drivers/watchdog/mediatek/wdt/common/wdt_v2/mtk_wdt_v2.c
+(6)[1:swapper/0]mtk wdt driver probe ..
+(7)[1:swapper/0]rt9471 5-0053: rt9471_irq_unmask irq(29, wdt)SUBSYSTEM=i2c
+-(6)[1:swapper/0]****************dump wdt reg start*************
+-(6)[1:swapper/0]****************dump wdt reg end*************
+-(6)[1:swapper/0]wdt_arch_reset: disable pwrap before wdt reset
+hang detect time out: 0x%x
+WDT T.O from 0x%x
+WDT CFG -0x%x-
+[pmic_check_rst] AP Watchdog
+[RGU] WDT DDR reserve mode success! 1387F1
+[RGU] WDT DDR reserve mode success! 1387F1
+[PLFM] WDT reboot bypass power key!
+RAM_CONSOLE wdt status (0x2)=0x2
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[11] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[12] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[12] [PROFILE] ::: lvl(2) WDT Init takes 3 ms
+[pmic_check_rst] AP Watchdog
+[RGU] WDT DDR reserve mode success! 1387F1
+[RGU] WDT DDR reserve mode success! 1387F1
+[PLFM] WDT reboot bypass power key!
+RAM_CONSOLE wdt status (0x2)=0x2
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[11] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[12] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[12] [PROFILE] ::: lvl(2) WDT Init takes 3 ms
+INFO:    [ATF](0)[62.030499]aee_wdt_dump_all_core: CPU(0) in ATF by WDT.
+WDT T.O from 0x%x
+WDT CFG -0x%x-
+[pmic_check_rst] AP Watchdog
+[RGU] WDT DDR reserve mode success! 307F1
+[RGU] WDT DDR reserve mode success! 307F1
+[PLFM] WDT reboot bypass power key!
+RAM_CONSOLE wdt status (0x6)=0x6
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[10] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[11] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[12] [PROFILE] ::: lvl(2) WDT Init takes 3 ms
+[pmic_check_rst] AP Watchdog
+[RGU] WDT DDR reserve mode success! 1387F1
+[RGU] WDT DDR reserve mode success! 1387F1
+[PLFM] WDT reboot bypass power key!
+RAM_CONSOLE wdt status (0x2)=0x2
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[11] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[12] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[12] [PROFILE] ::: lvl(2) WDT Init takes 3 ms
+[pmic_check_rst] AP Watchdog
+[RGU] WDT DDR reserve mode success! 1387F1
+[RGU] WDT DDR reserve mode success! 1387F1
+[PLFM] WDT reboot bypass power key!
+RAM_CONSOLE wdt status (0x2)=0x2
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[11] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[12] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[12] [PROFILE] ::: lvl(2) WDT Init takes 3 ms
+[PLFM] WDT reboot bypass power key!
+[RGU] WDT DDR reserve mode FAIL! 200F1
+RAM_CONSOLE wdt status (0x800)=0x800
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[11] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[12] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[12] [PROFILE] ::: lvl(2) WDT Init takes 3 ms
+[1241] [WDT] WDT get boot reason is 4 from pre-loader
+[pmic_check_rst] AP Watchdog
+[RGU] WDT DDR reserve mode success! 1387F1
+[RGU] WDT DDR reserve mode success! 1387F1
+[PLFM] WDT reboot bypass power key!
+RAM_CONSOLE wdt status (0x2)=0x2
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[11] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[12] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[13] [PROFILE] ::: lvl(2) WDT Init takes 4 ms
+[PLFM] WDT reboot bypass power key!
+[RGU] WDT DDR reserve mode FAIL! 200F1
+RAM_CONSOLE wdt status (0x800)=0x800
+[9] [WDT]  mtk_wdt_mode LK config  mode value=5d
+[10] [WDT]  mtk_wdt_mode_config LK  mode value=10, tmp:22000010
+[11] [WDT] wdt init
+[11] [WDT]  mtk_wdt_mode LK config  mode value=10
+[12] [WDT]  mtk_wdt_mode_config LK  mode value=5d, tmp:2200005d
+[12] [PROFILE] ::: lvl(2) WDT Init takes 3 ms
+[1242] [WDT] WDT get boot reason is 4 from pre-loader
+
+===== nvdata / nvram (91) =====
+nvram
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[103] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[106] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[139] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[102] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[106] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[139] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[102] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[105] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[138] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[103] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[106] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[139] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[102] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[106] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[139] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] votrim_size 16, cnvdata 1
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] votrim_size 16, cnvdata 1
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] votrim_size 16, cnvdata 1
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[103] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[106] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[139] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[103] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[106] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[139] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] votrim_size 16, cnvdata 1
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] votrim_size 16, cnvdata 1
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[MT6358] votrim_size 16, cnvdata 1
+[MT6358] cnvdata 0, n_size 2
+[MT6358] votrim_size 16, cnvdata 0
+[103] [GPT_LK][14]name=nvcfg, start_sect=0x4cd10, nr_sects=0x10000, uuid=138a6db9-1032-451d-91e9-0fa38ff94fbb
+[104] [WP]nvcfg(mmcblk0p15(4cd10-5cd10)):rw
+[104] [GPT_LK][15]name=nvdata, start_sect=0x5cd10, nr_sects=0x20000, uuid=756d934c-50e3-4c91-af46-02d824169ca7
+[106] [WP]nvdata(mmcblk0p16(5cd10-7cd10)):rw
+[137] [GPT_LK][32]name=nvram, start_sect=0x12d000, nr_sects=0x23000, uuid=ff1342cf-b7be-44d5-a25e-a435addd2702
+[139] [WP]nvram(mmcblk0p33(12d000-150000)):ro
+
+===== Montagem de particoes (297) =====
+[    0.000000] -(0)[0:swapper]Kernel command line: console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+[    0.001241]  (0)[0:swapper/0]Mount-cache hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.001263]  (0)[0:swapper/0]Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.544795]  (7)[1:swapper/0]device-mapper: verity-avb: AVB error handler initialized with vbmeta device: PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74
+f2fs
+f2fs
+f2fs
+f2fs
+f2fs
+ext4_begin_enable_verity
+ext4_end_enable_verity
+.fs-verity
+Unsupported blocksize for fs-verity
+5EXT4-fs (%s): last error at time %u: %.*s:%d
+5EXT4-fs (%s): initial error at time %u: %.*s:%d
+3EXT4: jbd2_journal_dirty_metadata failed: handle type %u started at line %u, credits %u/%u, errcode %d
+inode #%lu: block %u: len %u: ext4_ext_map_blocks returned %d
+%sF2FS-fs (%s): Issue discard(%u, %u, %u) failed, ret: %d
+ext4_get_group_desc
+can't mount with both data=journal and delalloc
+__ext4_get_inode_loc
+tran_f2fs_gc
+mounted_time_sec
+fs/f2fs/recovery.c
+fs/verity/verify.c
+fs/kernfs/mount.c
+fs/f2fs/checkpoint.c
+fs/f2fs/segment.c
+fs/ext4/extents_status.c
+fs/ext4/extents.c
+fs/verity/hash_algs.c
+fs/f2fs/xattr.c
+fs/ext4/xattr.c
+fs/f2fs/super.c
+fs/ext4/super.c
+fs/ext4/page-io.c
+fs/verity/open.c
+oops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt67
+ops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+Modules linked in: apie 139: enable=1URE]Create proc entry[gesture_state] success!ogoMIPS (lpj=52000)swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt67
+ext4_ext_get_actual_len(newext) == 0
+Failed to enable quota tracking (type=%d, err=%d). Please run e2fsck to fix.
+%sF2FS-fs (%s): invalid namelen(0), ino:%u, run fsck to fix.
+Failed to create aio fs mount.
+VFS: Found ext4 filesystem with unknown checksum algorithm.
+Unable to expand inode %lu. Delete some EAs or run e2fsck.
+Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+Error while updating MMP info. The filesystem seems to have been multiply mounted.
+No space for directory leaf checksum. Please run e2fsck -D.
+dir seems corrupt?  Run e2fsck -D.
+Couldn't mount because of unsupported optional features (%x)
+couldn't mount RDWR because of unsupported optional features (%x)
+unmount(u)
+ext4_remount: Checksum for group %u failed (%u!=%u)
+ext4_check_descriptors: Checksum for group %u failed (%u!=%u)
+Verity descriptor is too large (%d bytes)
+ext4_punch_hole
+ext4_tmpfile
+ext4_init_inode_table
+ext4_quota_enable
+ext4_ext_precache
+f2fs_inode_cache
+ext4_inode_cache
+Mount-cache
+Mountpoint-cache
+ext4_insert_range
+ext4_zero_range
+ext4_collapse_range
+__ext4_block_zero_page_range
+f2fs_check_nid_range
+ext4_get_inode_usage
+__ext4_journalled_writepage
+ext4_bio_write_page
+f2fs_convert_inline_page
+f2fs_extent_tree
+ext4_trim_all_free
+ext4_dirty_inode
+__ext4_new_inode
+ext4_nfs_get_inode
+ext4_evict_inode
+ext4_get_journal_inode
+ext4_ext_check_inode
+ext4_write_inode
+ext4_xattr_delete_inode
+ext4_do_update_inode
+ext4_free_inode
+ext4_protect_reserved_inode
+3Failed to read F2FS meta data inode
+ext4_handle_dirty_dx_node
+f2fs_extent_node
+ext4_handle_dirty_dirent_node
+can't mount with journal_async_commit in data=ordered mode
+verity_fec_decode
+ext4_find_dest_de
+ext4_check_all_de
+ext4_da_update_reserve_space
+ext4_ext_remove_space
+ext4_da_release_space
+ext4_prealloc_space
+kverityd
+mounting with "discard" option, but the device does not support discard
+ext4_mknod
+ext4_xattr_ibody_find
+ext4_xattr_block_find
+ext4_xattr_block_cache_find
+ext4_xattr_inode_cache_find
+ext4_group_extend
+ext4_append
+ext4_io_end
+ext4_journalled_write_end
+ext4_da_write_end
+ext4_write_end
+ext4_write_inline_data_end
+fs/f2fs/data.c
+fs/ext4/ext4_jbd2.c
+f2fs_bio_entry_slab
+__ext4_handle_dirty_metadata
+ext4_mb_free_metadata
+f2fs_inplace_write_data
+ext4_convert_inline_data
+ext4_try_to_write_inline_data
+ext4_journalled_write_inline_data
+ext4_create_inline_data
+ext4_update_inline_data
+ext4_free_data
+ext4_mb_release_inode_pa
+ext4_expand_extra_isize_ea
+&ext4__ioend_wq[i]
+CP_UMOUNT
+androidboot.vbmeta.device
+androidboot.vbmeta.avb_version
+androidboot.vbmeta.device_state
+androidboot.veritymode
+androidboot.veritymode.managed
+console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt6769 mem_index=11 mtk_printk_ctrl.disable_uart=0 mtk_printk_ctrl.disable_uart=1 androidboot.serialno=073262525B000692 rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=1 usb2jtag_mode=0 androidboot.dtb_idx=0 androidboot.dtbo_idx=0
+ext4_resize_begin
+ext4_da_write_begin
+ext4_write_begin
+ext4_da_write_inline_data_begin
+ext4_file_open
+VFS: Can't find ext4 filesystem
+mounting ext3 file system using the ext4 subsystem
+mounting ext2 file system using the ext4 subsystem
+filesystem too large to mount safely on this system
+ext4_ioctl
+f2fs_pin_file_control
+ext4_xattr_inode_inc_ref_all
+ext4_xattr_inode_dec_ref_all
+ext4_orphan_del
+ext4_set_acl
+can't mount with commit=%lu, fs mounted w/o journal
+can't mount with journal_async_commit, fs mounted w/o journal
+can't mount with journal_checksum, fs mounted w/o journal
+can't mount with data=, fs mounted w/o journal
+ext4_unlink
+ext4_symlink
+ext4_link
+ext4_getblk
+corrupt root inode, run e2fsck
+can't mount with both data=journal and dioread_nolock
+ext4_destroy_inline_data_nolock
+ext4_convert_inline_data_nolock
+ext4_find_inline_data_nolock
+-(0)[0:swapper]Kernel command line: console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cp
+(0)[0:swapper/0]Mount-cache hash table entries: 16384 (order: 5, 131072 bytes)
+(0)[0:swapper/0]Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes)
+(7)[1:swapper/0]device-mapper: verity-avb: AVB error handler initialized with vbmeta device: PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[88] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[90] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[92] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[94] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[96] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[96] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[88] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[90] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[92] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[94] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[96] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[96] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[87] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[89] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[91] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[93] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[95] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[96] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[88] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[90] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[92] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[94] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[96] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[96] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[88] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[90] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[92] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[94] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[96] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[96] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[88] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[90] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[92] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[94] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[96] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[97] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+vbmeta_a, checksum: PASS
+[23125] [DL_INFO]image:[04]vbmeta_a    , checksum: PASS
+[23126] [DL_INFO]image:[05]vbmeta_system_a
+vbmeta_vendor_a
+[23127] [DL_INFO]image:[06]vbmeta_vendor_a
+[23142] mblock_reserve-R start: 0xb7300000, sz: 0x8c00000 map:0 name:avb
+[23145] [avb] img_auth_required = 0
+[23146] dm_verity_retry_cnt=0
+[23162] avb_slot_verify.c[23162] :[23162] 753[23163] : ERROR: [23163] boot_b[23163] : Error verifying vbmeta image: [23163] OK_NOT_SIGNED[23164]
+[23806] [AVB20] lock_state = 0x3
+[23891] [avb] cmdline = androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes
+[23896] [avb] img_auth_required = 0
+[23897] [avb] boot/recovery vfy time = 755 ms
+[23898] [avb] avb_ret = 0
+[23898] [avb] ret = 0
+[29943]        : androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.d
+[29946]        : evice_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[88] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[90] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[92] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[94] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[96] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[97] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+[86] [GPT_LK][6]name=vbmeta_a, start_sect=0x19840, nr_sects=0x4000, uuid=1f9b0939-e16b-4bc9-a5bc-dc2ee969d801
+[88] [WP]vbmeta_a(mmcblk0p7(19840-1d840)):rw
+[88] [GPT_LK][7]name=vbmeta_system_a, start_sect=0x1d840, nr_sects=0x4000, uuid=d722c721-0dee-4cb8-8a83-2c63cd1393c7
+[90] [WP]vbmeta_system_a(mmcblk0p8(1d840-21840)):rw
+[90] [GPT_LK][8]name=vbmeta_vendor_a, start_sect=0x21840, nr_sects=0x4000, uuid=e02179a8-ceb5-48a9-8831-4f1c9c5a8695
+[92] [WP]vbmeta_vendor_a(mmcblk0p9(21840-25840)):rw
+[92] [GPT_LK][9]name=vbmeta_b, start_sect=0x25840, nr_sects=0x4000, uuid=84b09a81-fad2-41ac-890e-407c24975e74
+[94] [WP]vbmeta_b(mmcblk0p10(25840-29840)):rw
+[94] [GPT_LK][10]name=vbmeta_system_b, start_sect=0x29840, nr_sects=0x4000, uuid=e8f0a5ef-8d1b-42ea-9c2a-835cd77de363
+[96] [WP]vbmeta_system_b(mmcblk0p11(29840-2d840)):rw
+[97] [GPT_LK][11]name=vbmeta_vendor_b, start_sect=0x2d840, nr_sects=0x4000, uuid=d5f0e175-a6e1-4db7-94c0-f82ad032950b
+[98] [WP]vbmeta_vendor_b(mmcblk0p12(2d840-31840)):rw
+vbmeta_a, checksum: PASS
+[23104] [DL_INFO]image:[04]vbmeta_a    , checksum: PASS
+[23105] [DL_INFO]image:[05]vbmeta_system_a
+vbmeta_vendor_a
+[23106] [DL_INFO]image:[06]vbmeta_vendor_a
+[23121] mblock_reserve-R start: 0xb7300000, sz: 0x8c00000 map:0 name:avb
+[23124] [avb] img_auth_required = 0
+[23126] dm_verity_retry_cnt=0
+[23141] avb_slot_verify.c[23142] :[23142] 753[23142] : ERROR: [23142] boot_b[23142] : Error verifying vbmeta image: [23143] OK_NOT_SIGNED[23143]
+[23785] [AVB20] lock_state = 0x3
+[23870] [avb] cmdline = androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes
+[23876] [avb] img_auth_required = 0
+[23876] [avb] boot/recovery vfy time = 755 ms
+[23877] [avb] avb_ret = 0
+[23878] [avb] ret = 0
+[29921]        : androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.d
+[29924]        : evice_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot
+
+===== Init / sistema (226) =====
+[    0.000000] -(0)[0:swapper]memory-ssmr: ssmr_preinit, SSMR init: continue
+[    0.000000] -(0)[0:swapper]mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.032218]  (0)[1:swapper/0][BOOT_REASON] 'boot_reason=' is not found
+[    0.115828]  (0)[1:swapper/0][Power/PPM] @ppm_main_data_init: done!
+[    0.119111]  (6)[1:swapper/0]mrdump_hw_init: init_done.
+[    0.121418]  (6)[1:swapper/0]mrdump_cblock_init: done.
+[    0.122866]  (6)[1:swapper/0]mrdump_panic_init: Full ramdump disabled, version  not matched.
+[    0.156703]  (6)[1:swapper/0][M4U] m4u_pte_allocator_init: gM4u_pte_kmem = 0x        (ptrval), IMU_BYTES_PER_PTE = 1024
+[    0.156726]  (6)[1:swapper/0][M4U] ====m4u_reg_init: 0======
+[    0.157996]  (6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:init message queue list succeed
+[    0.158003]  (6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:init active queue list succeed
+[    0.158008]  (6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:init user information list succeed
+[    0.158030]  (6)[1:swapper/0][CONN_MD_DMP][I]conn_md_dmp_init:alloc msg_log memory done, size:0x00000428
+[    0.158036]  (6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:conn_md_dmp_init succeed
+[    0.158125]  (7)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:create conn_md_thread succeed, wakeup it
+[    0.158146]  (7)[1:swapper/0][TMEM]trusted_mem_subsys_init:250
+[    0.158152]  (7)[1:swapper/0][TMEM]trusted_mem_subsys_init:261 (end)
+[    0.354272]  (6)[1:swapper/0][Power/PPM] @ppm_cpi_init: CPI done! enable = 0
+[    0.354283]  (6)[1:swapper/0][Power/PPM] @ppm_dlpt_policy_init: register PPM_POLICY_DLPT done!
+[    0.354294]  (6)[1:swapper/0][Power/PPM] @ppm_sysboost_policy_init: register PPM_POLICY_SYS_BOOST done!
+[    0.354302]  (6)[1:swapper/0][Power/PPM] @ppm_ptpod_policy_init: register PPM_POLICY_PTPOD done!
+[    0.354324]  (6)[1:swapper/0][Power/PPM] @ppm_pwrthro_policy_init: register PPM_POLICY_PWR_THRO done!
+[    0.354332]  (6)[1:swapper/0][Power/PPM] @ppm_thermal_policy_init: register PPM_POLICY_THERMAL done!
+[    0.354343]  (6)[1:swapper/0][Power/PPM] @ppm_hard_userlimit_policy_init: register PPM_POLICY_HARD_USER_LIMIT done!
+[    0.354353]  (6)[1:swapper/0][Power/PPM] @ppm_userlimit_policy_init: register PPM_POLICY_USER_LIMIT done!
+[    0.354361]  (6)[1:swapper/0][Power/PPM] @ppm_forcelimit_policy_init: register PPM_POLICY_FORCE_LIMIT done!
+[    0.354369]  (6)[1:swapper/0][Power/PPM] @ppm_ut_policy_init: register PPM_POLICY_UT done!
+[    0.356906]  (6)[1:swapper/0]tmem_mpu_vio_init:121 vio checker is not registered!
+[    0.356916]  (6)[1:swapper/0][TMEM]mtee_mchunks_init:189 (1)
+[    0.357064]  (6)[1:swapper/0][TMEM]mtee_mchunks_init:205 (end)
+[    0.364271]  (7)[1:swapper/0][GPU/MALI][INFO]@mtk_platform_init: initialize successfully
+[    0.440427]  (7)[1:swapper/0][ccci1/sys]swtp_init:can't find swtp0 compatible node
+[    0.440616]  (7)[1:swapper/0][ccci1/sys]swtp_init:can't find swtp1 compatible node
+[    0.442006]  (7)[1:swapper/0]amms_sysfs_init: done.
+[    0.455437]  (7)[1:swapper/0][MUSB]usb_phy_recover 797: usb recovery success
+[    0.458449]  (7)[1:swapper/0]mrdump_sysfs_init: done.
+[    0.511934]  (6)[1:swapper/0]mt_i2c_init: driver as platform device
+[    0.530639]  (7)[1:swapper/0]mtk_power_misc_init INIT done, init:1
+[    0.585003]  (6)[1:swapper/0][Power/PPM] @ppm_lcmoff_policy_init: register PPM_POLICY_LCM_OFF done!
+[    0.585832]  (7)[1:swapper/0]pmic_chrdet_init:mt6358_upmu_set_rg_vcdt_hv_vth set VCDT HV to 0XD
+[    0.585913]  (7)[1:swapper/0][TMEM]trusted_mem_init:387
+[    0.585918]  (7)[1:swapper/0][TMEM]trusted_mem_init:391 (end)
+[    0.640976]  (6)[1:swapper/0]mtk_pe20_init: use default table, -524
+[    0.640980]  (6)[1:swapper/0]mtk_tc30_init:end
+fs/f2fs/recovery.c
+CP_RECOVERY
+DISP_OPT_ESD_CHECK_RECOVERY
+INITIATE_RECOVERY
+RELEASE_RECOVERY
+androidboot.bootreason
+console=tty0 console=ttyS0,921600n1 root=/dev/ram vmalloc=400M slub_debug=OFZPU swiotlb=noforce cgroup.memory=nosocket,nokmem firmware_class.path=/vendor/firmware page_owner=on loop.max_part=7 has_battery_removed=0 FlashID=Samsung+335636434142 androidboot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc ramoops.mem_address=0x4d010000 ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000 bootopt=64S3,32N2,64N2 buildvariant=user twrpfastboot=1 buildvariant=eng root=/dev/ram androidboot.vbmeta.device=PARTUUID=84b09a81-fad2-41ac-890e-407c24975e74 androidboot.vbmeta.avb_version=1.1 androidboot.vbmeta.device_state=unlocked androidboot.veritymode=enforcing androidboot.veritymode.managed=yes androidboot.slot_suffix=_b androidboot.slot=b androidboot.verifiedbootstate=orange androidboot.atm=disabled sfi=0x00000000 vcore_num=0 androidboot.force_normal_boot=1 transsion_enable_factory=0 androidboot.meta_log_disable=0 tran_cpu_model=mt6769 mem_index=11 mtk_printk_ctrl.disable_uart=0 mtk_printk_ctrl.disable_uart=1 androidboot.serialno=073262525B000692 rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=1 usb2jtag_mode=0 androidboot.dtb_idx=0 androidboot.dtbo_idx=0
+INFO: recovery required on readonly filesystem
+TCPRenoRecoveryFail
+TCPSackRecoveryFail
+-(0)[0:swapper]memory-ssmr: ssmr_preinit, SSMR init: continue
+-(0)[0:swapper]mem auto-init: stack:off, heap alloc:off, heap free:off
+(0)[1:swapper/0][BOOT_REASON] 'boot_reason=' is not found
+(0)[1:swapper/0][Power/PPM] @ppm_main_data_init: done!
+(6)[1:swapper/0]mrdump_hw_init: init_done.
+(6)[1:swapper/0]mrdump_cblock_init: done.
+(6)[1:swapper/0]mrdump_panic_init: Full ramdump disabled, version  not matched.x
+(6)[1:swapper/0][M4U] m4u_pte_allocator_init: gM4u_pte_kmem = 0x        (ptrval), IMU_BYTES_PER_PTE = 1024
+(6)[1:swapper/0][M4U] ====m4u_reg_init: 0======y
+(6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:init message queue list succeed
+(6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:init active queue list succeedZ
+(6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:init user information list succeed
+(6)[1:swapper/0][CONN_MD_DMP][I]conn_md_dmp_init:alloc msg_log memory done, size:0x00000428
+(6)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:conn_md_dmp_init succeed
+(7)[1:swapper/0][CONN-MD-DFT][I]conn_md_init:create conn_md_thread succeed, wakeup it
+(7)[1:swapper/0][TMEM]trusted_mem_subsys_init:250
+(7)[1:swapper/0][TMEM]trusted_mem_subsys_init:261 (end)
+(6)[1:swapper/0][Power/PPM] @ppm_cpi_init: CPI done! enable = 0x
+(6)[1:swapper/0][Power/PPM] @ppm_dlpt_policy_init: register PPM_POLICY_DLPT done!
+(6)[1:swapper/0][Power/PPM] @ppm_sysboost_policy_init: register PPM_POLICY_SYS_BOOST done!
+(6)[1:swapper/0][Power/PPM] @ppm_ptpod_policy_init: register PPM_POLICY_PTPOD done! Q
+(6)[1:swapper/0][Power/PPM] @ppm_pwrthro_policy_init: register PPM_POLICY_PWR_THRO done!
+(6)[1:swapper/0][Power/PPM] @ppm_thermal_policy_init: register PPM_POLICY_THERMAL done!
+(6)[1:swapper/0][Power/PPM] @ppm_hard_userlimit_policy_init: register PPM_POLICY_HARD_USER_LIMIT done!
+(6)[1:swapper/0][Power/PPM] @ppm_userlimit_policy_init: register PPM_POLICY_USER_LIMIT done!
+(6)[1:swapper/0][Power/PPM] @ppm_forcelimit_policy_init: register PPM_POLICY_FORCE_LIMIT done!
+(6)[1:swapper/0][Power/PPM] @ppm_ut_policy_init: register PPM_POLICY_UT done!
+(6)[1:swapper/0]tmem_mpu_vio_init:121 vio checker is not registered!
+(6)[1:swapper/0][TMEM]mtee_mchunks_init:189 (1)
+(6)[1:swapper/0][TMEM]mtee_mchunks_init:205 (end)
+(7)[1:swapper/0][GPU/MALI][INFO]@mtk_platform_init: initialize successfully
+(7)[1:swapper/0][ccci1/sys]swtp_init:can't find swtp0 compatible node
+(7)[1:swapper/0][ccci1/sys]swtp_init:can't find swtp1 compatible node
+(7)[1:swapper/0]amms_sysfs_init: done.
+(7)[1:swapper/0][MUSB]usb_phy_recover 797: usb recovery successT
+(7)[1:swapper/0]mrdump_sysfs_init: done.
+(6)[1:swapper/0]mt_i2c_init: driver as platform device
+(7)[1:swapper/0]mtk_power_misc_init INIT done, init:1
+(6)[1:swapper/0][Power/PPM] @ppm_lcmoff_policy_init: register PPM_POLICY_LCM_OFF done!
+(7)[1:swapper/0]pmic_chrdet_init:mt6358_upmu_set_rg_vcdt_hv_vth set VCDT HV to 0XD
+(7)[1:swapper/0][TMEM]trusted_mem_init:387
+(7)[1:swapper/0][TMEM]trusted_mem_init:391 (end)
+(6)[1:swapper/0]mtk_pe20_init: use default table, -524
+(6)[1:swapper/0]mtk_tc30_init:end
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x207F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x23E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2548, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[327] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x207F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x23E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2548, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[327] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x207F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x23E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2540, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[326] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x207F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x23E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2548, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[327] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x207F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x23E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2548, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[327] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x200F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x21E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2548, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[327] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+RAM_CONSOLE. set reboot reason info done
+RAM_CONSOLE. set reboot reason info done
+[1754] [fgauge_read_current]g_isbat_init:1,cartune:1000,50,381470
+[1953] [fgauge_read_current]g_isbat_init:1,cartune:1000,50,381470
+[23096] [fgauge_read_current]g_isbat_init:1,cartune:1000,50,381470
+[23897] [avb] boot/recovery vfy time = 755 ms
+[29796] mrdump_key_fdt_init: force trigger default to EINT
+[29853] [LEDS]LK: leds_deinit: LEDS off
+[29954]        : tk_printk_ctrl.disable_uart=1 androidboot.serialno=xxxxxxxxxxxxxxxx rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x207F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x23E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2548, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[327] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL(0x200F1)
+[RGU] mtk_wdt_pre_init: MTK_WDT_DEBUG_CTL2(0xFF)
+[RGU] mtk_wdt_pre_init: MTK_WDT_LATCH_CTL(0x21E71)
+[RGU] mtk_wdt_pre_init: MTK_WDT_REQ_MODE(3F0032), MTK_WDT_REQ_IRQ_EN(3F0032)
+[RTC]rtc_2sec_reboot_check 0x2548, without 2sec reboot, type 0x2
+[pl_battery_init] is_fg_init:0 , force_init:0 bat:1
+[pl_battery_init] is_fg_init: 1 , skip init
+BOOT_REASON: 4
+[327] [LEDS]LK: leds_init: mt65xx_backlight_off
+[365] kpd_use_extend_type = 0, kpd_hw_recovery_key = 0, kpd_hw_factory_key = 1
+[367] MT65XX_RECOVERY_KEY 0x0
+kedump: boot_reason(4)
+RAM_CONSOLE. set reboot reason info done
+RAM_CONSOLE. set reboot reason info done
+RAM_CONSOLE. set reboot reason info done
+[1755] [fgauge_read_current]g_isbat_init:1,cartune:1000,50,381470
+[1954] [fgauge_read_current]g_isbat_init:1,cartune:1000,50,381470
+[23075] [fgauge_read_current]g_isbat_init:1,cartune:1000,50,381470
+[23876] [avb] boot/recovery vfy time = 755 ms
+[29775] mrdump_key_fdt_init: force trigger default to EINT
+[29832] [LEDS]LK: leds_deinit: LEDS off
+[29933]        : tk_printk_ctrl.disable_uart=1 androidboot.serialno=xxxxxxxxxxxxxxxx rtc_flag_write=100 androidboot.bootreason=kernel_panic gpt=
+
+===== Temperatura (402) =====
+[    0.354332]  (6)[1:swapper/0][Power/PPM] @ppm_thermal_policy_init: register PPM_POLICY_THERMAL done!
+[    0.480726]  (6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown init
+[    0.480736]  (6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown register ltf
+[    0.480804]  (6)[1:swapper/0]mtk_cooler_backlight: thermal/cooler/backlight init
+[    0.480809]  (6)[1:swapper/0]mtk_cooler_backlight: thermal/cooler/backlight register ltf
+[    0.480869]  (6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown init
+[    0.480874]  (6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown register ltf
+[    0.481385]  (6)[1:swapper/0][Thermal/TZ/BTS][mtkts_bts_probe]get auxadc iio ch: 0
+[    0.481540]  (6)[1:swapper/0][Thermal/TZ/BTS] mtkts_bts_prepare_table table_num=7
+[    0.481805]  (6)[1:swapper/0][Thermal/TZ/BTSMDPA][mtkts_btsmdpa_probe]get auxadc iio ch: 1
+[    0.481934]  (6)[1:swapper/0][Thermal/TZ/BTSMDPA] mtkts_btsmdpa_prepare_table table_num=7
+[    0.482015]  (6)[1:swapper/0][Thermal/TZ/CPU]tscpu_init
+[    0.482163]  (6)[1:swapper/0][Thermal/TZ/CPU]thermal_prob
+[    0.482542]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_adc_ge_t      = 652
+[    0.482547]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_adc_oe_t      = 495
+[    0.482552]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_degc_cali     = 61
+[    0.482557]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_adc_cali_en_t = 1
+[    0.482563]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_slope       = 0
+[    0.482568]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_slope_sign  = 0
+[    0.482573]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_id            = 0
+[    0.482578]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu1     = 346
+[    0.482584]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu2     = 345
+[    0.482588]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu3     = 346
+[    0.482593]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu4     = 350
+[    0.482598]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu5     = 348
+[    0.482603]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu6     = 348
+[    0.482608]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu7     = 348
+[    0.482613]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu8     = 347
+[    0.482618]  (6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsabb      = 341
+[    0.482624]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_ge         = 341
+[    0.482629]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_gain       = 10341
+[    0.482635]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt0   = 8765
+[    0.482640]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt1   = 8763
+[    0.482645]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt2   = 8765
+[    0.482650]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt3   = 8774
+[    0.482655]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt4   = 8769
+[    0.482660]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt5   = 8769
+[    0.482665]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt6   = 8769
+[    0.482670]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt7   = 8768
+[    0.482675]  (6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt8   = 8753
+[    0.483384]  (6)[1:swapper/0][W]mtk_wcn_cmb_stub_query_ctrl:Thermal query not registered
+[    0.483588]  (6)[1:swapper/0][Thermal/TZ/IMGS][mtk_imgs_init]
+[    0.484636]  (6)[1:swapper/0][Thermal/TZ/PMIC] [mtktspmic_init]
+[    0.484644]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+[    0.484693]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+[    0.484699]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+[    0.484704]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+[    0.484709]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+[    0.484715]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+[    0.484720]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+[    0.484725]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+[    0.484731]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+[    0.484736]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0
+[    0.484741]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  end
+[    0.484747]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+[    0.484752]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+[    0.484757]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+[    0.484762]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+[    0.484768]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+[    0.484773]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1
+[    0.484778]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x0
+[    0.484783]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0
+[    0.484788]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x0
+[    0.484795]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000
+[    0.484801]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000
+[    0.484808]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.484814]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.486645]  (7)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 3
+[    0.486900]  (6)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 1
+[    0.487006]  (6)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 2
+[    0.487785]  (6)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 0
+[    0.487882]  (6)[1:swapper/0][Thermal/TZ/PMIC] [mt6358tsbuck1_init]
+[    0.487888]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+[    0.487934]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+[    0.487940]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+[    0.487945]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+[    0.487951]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+[    0.487956]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+[    0.487961]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+[    0.487967]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+[    0.487972]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+[    0.487977]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0
+[    0.487982]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  end
+[    0.487987]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+[    0.487993]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+[    0.487998]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+[    0.488003]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+[    0.488008]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+[    0.488013]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1
+[    0.488018]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x0
+[    0.488024]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0
+[    0.488028]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x0
+[    0.488035]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000
+[    0.488042]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000
+[    0.488048]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.488053]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.488502]  (6)[1:swapper/0][Thermal/TZ/PMIC] [mt6358tsbuck2_init]
+[    0.488507]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+[    0.488581]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+[    0.488587]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+[    0.488592]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+[    0.488597]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+[    0.488603]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+[    0.488608]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+[    0.488613]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+[    0.488618]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+[    0.488623]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0
+[    0.488628]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  end
+[    0.488633]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+[    0.488638]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+[    0.488643]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+[    0.488648]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+[    0.488653]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+[    0.488657]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1
+[    0.488662]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x0
+[    0.488668]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0
+[    0.488672]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x0
+[    0.488679]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000
+[    0.488685]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000
+[    0.488691]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.488697]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.489161]  (6)[1:swapper/0][Thermal/TZ/PMIC] [mt6358tsbuck3_init]
+[    0.489166]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+[    0.489208]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+[    0.489214]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+[    0.489219]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+[    0.489224]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+[    0.489229]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+[    0.489234]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+[    0.489239]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+[    0.489244]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+[    0.489249]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0
+[    0.489254]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  end
+[    0.489259]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+[    0.489264]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+[    0.489269]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+[    0.489274]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+[    0.489279]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+[    0.489284]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1
+[    0.489288]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x0
+[    0.489293]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0
+[    0.489299]  (6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x0
+[    0.489305]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000
+[    0.489310]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000
+[    0.489316]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.489322]  (6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+[    0.525890]  (7)[1:swapper/0]Get TEMPERATURE_TB0 failed
+[    0.525897]  (7)[1:swapper/0]Get TEMPERATURE_TB1 failed
+[    0.525905]  (7)[1:swapper/0]Get g_temperature failed, idx 0
+[    0.525960]  (7)[1:swapper/0]Get g_temperature failed, idx 1
+[    0.526012]  (7)[1:swapper/0]Get g_temperature failed, idx 2
+[    0.526065]  (7)[1:swapper/0]Get g_temperature failed, idx 3
+[    0.526117]  (7)[1:swapper/0]Get g_temperature failed, idx 4
+[    0.526169]  (7)[1:swapper/0]Get g_temperature failed, idx 5
+[    0.526221]  (7)[1:swapper/0]Get g_temperature failed, idx 6
+[    0.526273]  (7)[1:swapper/0]Get g_temperature failed, idx 7
+[    0.526325]  (7)[1:swapper/0]Get g_temperature failed, idx 8
+[    0.526376]  (7)[1:swapper/0]Get g_temperature failed, idx 9
+[    0.588568] -(7)[0:swapper/7][Thermal/TZ/CPU]Driver is ready to report valid temperatures
+[    0.588688]  (3)[304:krtatm][Thermal/TZ/CPU]krtatm_thread c 37700 p 0 cl 2147483647 gl 2147483647 s 0
+[    0.588719]  (3)[304:krtatm][Thermal/TZ/CPU]tjs 75000 ttj 117000 -1 on 0 sspm 1 0
+[    0.590734]  (6)[1:swapper/0][Thermal/TC/bcct]mtkcooler_bcct_late_init
+[    0.590890]  (6)[1:swapper/0][Thermal/TC/bcct]mtkcooler_bcct_pdrv_probe
+thermal_temp = %d
+thermal_status: %d
+thermal_ATM_status: %d
+thermal_ktime: %lld
+6[Thermal/TZ/PMIC] [%s] raw=%d, PMIC T=%d
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_battery.c
+drivers/misc/mediatek/thermal/common/coolers/mtk_cooler_mutt.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_wmt.c
+drivers/misc/mediatek/performance/eara_thermal/thermal_budget.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_bts.c
+drivers/misc/mediatek/thermal/mtk_thermal_monitor.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_imgsensor.c
+drivers/misc/mediatek/thermal/common/mtk_thermal_timer.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_charger.c
+drivers/misc/mediatek/thermal/mtk_cooler_shutdown.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_dctm.c
+drivers/misc/mediatek/thermal/common/coolers/mtk_cooler_atm.c
+drivers/misc/mediatek/thermal/common/mtk_thermal_platform.c
+drivers/misc/mediatek/thermal/mtk_cooler_cam.c
+drivers/thermal/of-thermal.c
+TEMPERATURE_T0
+TEMPERATURE_TB0
+5[Thermal/TZ/CPU]%s cooldev0=%s,cooldev1=%s,cooldev2=%s,cooldev3=%s,cooldev4=%s,
+5[Thermal/TZ/PMIC] [%s] cooldev0=%s,cooldev1=%s,cooldev2=%s,cooldev3=%s,cooldev4=%s,
+5[Thermal/TZ/CPU]trip_5_temp=%d,trip_6_temp=%d,trip_7_temp=%d,trip_8_temp=%d,trip_9_temp=%d,
+5[Thermal/TZ/PMIC] trip_4_temp=%d,trip_5_temp=%d,trip_6_temp=%d,trip_7_temp=%d,trip_8_temp=%d,
+5[Thermal/TZ/CPU]%s trip_0_temp=%d,trip_1_temp=%d,trip_2_temp=%d,trip_3_temp=%d,trip_4_temp=%d,
+5[Thermal/TZ/PMIC] [%s] trip_0_temp=%d,trip_1_temp=%d,trip_2_temp=%d,trip_3_temp=%d,
+g_THERMAL_TRIP_4=%d,g_THERMAL_TRIP_5=%d,g_THERMAL_TRIP_6=%d,g_THERMAL_TRIP_7=%d,
+5[Thermal/TZ/CPU]g_THERMAL_TRIP_3=%d,g_THERMAL_TRIP_4=%d,g_THERMAL_TRIP_5=%d,g_THERMAL_TRIP_6=%d,
+5[Thermal/TZ/PMIC] g_THERMAL_TRIP_3=%d,g_THERMAL_TRIP_4=%d,g_THERMAL_TRIP_5=%d,g_THERMAL_TRIP_6=%d,
+g_THERMAL_TRIP_0=%d,g_THERMAL_TRIP_1=%d,g_THERMAL_TRIP_2=%d,g_THERMAL_TRIP_3=%d,
+5[Thermal/TZ/CPU]%s g_THERMAL_TRIP_0=%d,g_THERMAL_TRIP_1=%d,g_THERMAL_TRIP_2=%d,
+5[Thermal/TZ/PMIC] [%s] g_THERMAL_TRIP_0=%d,g_THERMAL_TRIP_1=%d,g_THERMAL_TRIP_2=%d,
+6[Thermal/TZ/PMIC] *****************************************
+mtk_eara_thermal_pb_handle
+tscpu_thermal_suspend
+drivers/misc/mediatek/thermal/common/coolers/mtk_ta.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_btsmdpa.c
+drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_pa.c
+drivers/misc/mediatek/thermal/mt6768/src/mtk_ts_6358buck3.c
+drivers/misc/mediatek/thermal/mt6768/src/mtk_ts_6358buck2.c
+drivers/misc/mediatek/thermal/mt6768/src/mtk_ts_6358buck1.c
+ppm_thermal_update_limit_cb
+ppm_thermal_status_change_cb
+mtk_thermal_cooling_device_register_wrapper_extra
+_mtkthermal_update_and_get_sma
+THERMAL_TRIP_HOT
+rbat_temperature_table_num
+tscpu_unregister_thermal
+mtktspmic_unregister_thermal
+mt6358tsbuck3_unregister_thermal
+mt6358tsbuck2_unregister_thermal
+mt6358tsbuck1_unregister_thermal
+tscpu_register_thermal
+mtktspmic_register_thermal
+mt6358tsbuck3_register_thermal
+mt6358tsbuck2_register_thermal
+mt6358tsbuck1_register_thermal
+charge_thermal
+eara_thermal
+driver/thermal
+mtk-thermal
+Thermal
+(6)[1:swapper/0][Power/PPM] @ppm_thermal_policy_init: register PPM_POLICY_THERMAL done!
+(6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown init
+(6)[1:swapper/0]mtk_cooler_shutdown: thermal/cooler/shutdown register ltf
+(6)[1:swapper/0]mtk_cooler_backlight: thermal/cooler/backlight initv
+(6)[1:swapper/0]mtk_cooler_backlight: thermal/cooler/backlight register ltf
+(6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown init
+(6)[1:swapper/0]mtk_cooler_kshutdown: thermal/cooler/kshutdown register ltfC\
+(6)[1:swapper/0][Thermal/TZ/BTS][mtkts_bts_probe]get auxadc iio ch: 0
+(6)[1:swapper/0][Thermal/TZ/BTS] mtkts_bts_prepare_table table_num=7
+(6)[1:swapper/0][Thermal/TZ/BTSMDPA][mtkts_btsmdpa_probe]get auxadc iio ch: 1
+(6)[1:swapper/0][Thermal/TZ/BTSMDPA] mtkts_btsmdpa_prepare_table table_num=7
+(6)[1:swapper/0][Thermal/TZ/CPU]tscpu_init
+(6)[1:swapper/0][Thermal/TZ/CPU]thermal_prob
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_adc_ge_t      = 652
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_adc_oe_t      = 495t+
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_degc_cali     = 61
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_adc_cali_en_t = 1
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_slope       = 0
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_slope_sign  = 0
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_id            = 0
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu1     = 346
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu2     = 345
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu3     = 3466
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu4     = 350
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu5     = 348
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu6     = 348
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu7     = 348V
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsmcu8     = 347
+(6)[1:swapper/0][Thermal/TZ/CPU][cal] g_o_vtsabb      = 3414C
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_ge         = 341
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_gain       = 10341
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt0   = 8765
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt1   = 8763#
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt2   = 8765
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt3   = 8774
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt4   = 8769T
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt5   = 8769
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt6   = 8769
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt7   = 87689
+(6)[1:swapper/0][Thermal/TZ/CPU][T_De][cal] g_x_roomt8   = 8753
+(6)[1:swapper/0][W]mtk_wcn_cmb_stub_query_ctrl:Thermal query not registered
+(6)[1:swapper/0][Thermal/TZ/IMGS][mtk_imgs_init]
+(6)[1:swapper/0][Thermal/TZ/PMIC] [mtktspmic_init]
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  endy
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x024
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0mG
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000P|
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+(7)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 3
+(6)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 1
+(6)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 2
+(6)[1:swapper/0][Thermal/TZ/CPU]tscpu_bind binding OK, 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [mt6358tsbuck1_init]
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  end9
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x09
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000V
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000#
+(6)[1:swapper/0][Thermal/TZ/PMIC] [mt6358tsbuck2_init]
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0m
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  end
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1>g
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x0`{
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+(6)[1:swapper/0][Thermal/TZ/PMIC] [mt6358tsbuck3_init]
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  start
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts        = 1629
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_2      = 1551
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_vts_3      = 1552
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_4rsv0      = 1554
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_degc_cali    = 50
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_adc_cali_en  = 1
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope      = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_o_slope_sign = 0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] 6358_efuse: g_id		   = 0Wm)
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug]  endy
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts        = 0x65d
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_2      = 0x60f
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_vts_3      = 0x610
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_4rsv0      = 0x612
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_degc_cali    = 0x32
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_adc_cali_en  = 0x1
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope      = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_o_slope_sign = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [pmic_debug] g_id           = 0x0
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1681 INTERCEPT=450342, Vbe = -715000~J*
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=390539, Vbe = -681000Ta*
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000+x*
+(6)[1:swapper/0][Thermal/TZ/PMIC] [Thermal calibration] SLOPE1=1000000 SLOPE2=-1863 INTERCEPT=391076, Vbe = -682000
+(7)[1:swapper/0]Get TEMPERATURE_TB0 failed
+(7)[1:swapper/0]Get TEMPERATURE_TB1 failed
+(7)[1:swapper/0]Get g_temperature failed, idx 0
+(7)[1:swapper/0]Get g_temperature failed, idx 1
+(7)[1:swapper/0]Get g_temperature failed, idx 29kZ
+(7)[1:swapper/0]Get g_temperature failed, idx 3
+(7)[1:swapper/0]Get g_temperature failed, idx 4
+(7)[1:swapper/0]Get g_temperature failed, idx 5
+(7)[1:swapper/0]Get g_temperature failed, idx 69
+(7)[1:swapper/0]Get g_temperature failed, idx 7@e^
+(7)[1:swapper/0]Get g_temperature failed, idx 8-/_
+(7)[1:swapper/0]Get g_temperature failed, idx 9
+temperatures
+(3)[304:krtatm][Thermal/TZ/CPU]krtatm_thread c 37700 p 0 cl 2147483647 gl 2147483647 s 0
+(3)[304:krtatm][Thermal/TZ/CPU]tjs 75000 ttj 117000 -1 on 0 sspm 1 0
+(6)[1:swapper/0][Thermal/TC/bcct]mtkcooler_bcct_late_init
+(6)[1:swapper/0][Thermal/TC/bcct]mtkcooler_bcct_pdrv_probe
+thermal_temp = %d
+thermal_status: %d
+thermal_ATM_status: %d
+thermal_ktime: %lld
+[PMIC]THERMALSTATUS[0x1C]=0x0
+[PMIC]THERMALSTATUS[0x1C]=0x0
+[PMIC]THERMALSTATUS[0x1C]=0x0
+[PMIC]THERMALSTATUS[0x1C]=0x0
+[PMIC]THERMALSTATUS[0x1C]=0x0
+[PMIC]THERMALSTATUS[0x1C]=0x0
+[PMIC]THERMALSTATUS[0x1C]=0x0
+[PMIC]THERMALSTATUS[0x1C]=0x0
+
