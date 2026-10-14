@@ -3,3 +3,4 @@ backup/
 tools/venv/
 tools/mtkclient-main/
 firmware/
+__pycache__/
