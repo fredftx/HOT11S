@@ -27,7 +27,8 @@ echo   6. Ler logs de travamento (expdb/misc) e analisar (so leitura)
 echo   7. Ler e verificar imagens de boot dos slots A e B (so leitura)
 echo   8. Gravar boot.img de ESTOQUE nos slots A e B (corrige o bootloop)
 echo   9. Gravar a ROM de estoque INTEIRA (sem IMEI, preloader e dados)
-echo  10. Sair
+echo  10. Gravar o PRELOADER da ROM de estoque (le e compara antes)
+echo  11. Sair
 echo.
 echo   Depois de escolher, CONECTE o cabo USB quando aparecer
 echo   "Waiting for device"/"Preloader". Se nao conectar, desligue e
@@ -44,7 +45,43 @@ if "%OP%"=="6" goto logs
 if "%OP%"=="7" goto bootimg
 if "%OP%"=="8" goto gravarboot
 if "%OP%"=="9" goto gravarrom
-if "%OP%"=="10" exit /b 0
+if "%OP%"=="10" goto gravarpreloader
+if "%OP%"=="11" exit /b 0
+goto menu
+
+:gravarpreloader
+if not exist backup mkdir backup
+echo.
+set "SZ=0"
+if exist backup\preloader_boot1_atual.bin for %%F in ("backup\preloader_boot1_atual.bin") do set "SZ=%%~zF"
+if not "%SZ%"=="4194304" (
+  echo Passo 1 de 2: lendo o preloader atual para backup\preloader_boot1_atual.bin
+  echo Conecte o cabo segurando VOLUME + e VOLUME - .
+  "%PY%" "%MTK%" r preloader backup\preloader_boot1_atual.bin --parttype boot1
+)
+echo.
+"%PY%" "%~dp0tools\preloader.py" "%~dp0firmware\rom" "backup\preloader_boot1_atual.bin" "firmware\preloader_rom.bin"
+if errorlevel 1 (
+  echo.
+  echo [CANCELADO] Nada foi gravado. Mande um print desta tela para o Claude.
+  pause
+  goto menu
+)
+echo.
+echo  Isto grava o preloader da ROM na area boot1. Se algo der errado, o
+echo  modo BROM continua funcionando e o original esta no backup.
+echo.
+set /p CONF="Digite GRAVAR para confirmar: "
+if /i not "%CONF%"=="GRAVAR" (
+  echo Cancelado.
+  pause
+  goto menu
+)
+echo Passo 2 de 2: DESCONECTE e conecte de novo segurando VOLUME + e VOLUME - .
+"%PY%" "%MTK%" w preloader firmware\preloader_rom.bin --parttype boot1
+echo.
+echo Pronto. Desconecte o cabo e ligue o aparelho segurando POWER.
+pause
 goto menu
 
 :gravarrom

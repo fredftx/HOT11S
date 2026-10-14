@@ -61,3 +61,10 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   porque só pulava partições inteiras. Corrigido: o `super` agora é dividido em pedaços de 256 MB,
   gravados com `wo` numa única conexão (`mtk.py script`). Cada pedaço confirmado é anotado na
   hora em `logs\rom_gravadas.txt`, e a próxima rodada continua do pedaço seguinte.
+- **14/10/2026:** ROM V1218 gravada até 100% (slot A ativo). Continua em bootloop, agora mais
+  curto: o Preloader aparece a cada ~23 s, contra ~68 s antes. O `expdb` relido às 13:55 só tem
+  o kernel antigo (TWRP, slot B), sem nenhuma linha das inicializações novas, e os registros
+  do LK de antes sumiram. Ou seja, o kernel novo nunca chegou a rodar e o travamento está no LK
+  ou no TEE/ATF. Suspeita principal: o **preloader de 2022**, mantido por segurança, não
+  combina com o `lk`/`tee` de 2024. Criada a **opção 10**: ela lê o preloader atual (boot1),
+  compara com o da ROM e grava o da ROM.
