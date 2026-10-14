@@ -1,0 +1,27 @@
+﻿[10:31:02.440] Monitorando... (21 dispositivos USB já conectados serão ignorados)
+[10:31:13.638] CONECTOU  -> PRELOADER MediaTek - o chip está vivo; dá para regravar o firmware com SP Flash Tool/mtkclient
+[10:31:13.644]              MT65xx Preloader  [USB\VID_0E8D&PID_2000\6&C1A2E2F&0&4]  status: Error
+[10:31:13.648]              Atenção: o Windows não tem driver para este modo (normal para Preloader/BROM sem drivers MTK).
+[10:31:21.491] DESCONECTOU <- MT65xx Preloader
+[10:32:21.034] CONECTOU  -> PRELOADER MediaTek - o chip está vivo; dá para regravar o firmware com SP Flash Tool/mtkclient
+[10:32:21.036]              MT65xx Preloader  [USB\VID_0E8D&PID_2000\6&C1A2E2F&0&4]  status: Error
+[10:32:21.037]              Atenção: o Windows não tem driver para este modo (normal para Preloader/BROM sem drivers MTK).
+[10:32:28.897] DESCONECTOU <- MT65xx Preloader
+[10:38:04.184] CONECTOU  -> PRELOADER MediaTek - o chip está vivo; dá para regravar o firmware com SP Flash Tool/mtkclient
+[10:38:04.186]              MT65xx Preloader  [USB\VID_0E8D&PID_2000\6&C1A2E2F&0&4]  status: Error
+[10:38:04.188]              Atenção: o Windows não tem driver para este modo (normal para Preloader/BROM sem drivers MTK).
+[10:38:12.005] DESCONECTOU <- MT65xx Preloader
+[10:38:46.691] CONECTOU  -> BROM (modo de emergência MediaTek) - dá para regravar tudo com mtkclient/SP Flash Tool
+[10:38:46.691]              USB Serial Device (COM3)  [USB\VID_0E8D&PID_0003\6&C1A2E2F&0&4]  status: OK
+[10:38:51.330] DESCONECTOU <- USB Serial Device (COM3)
+[10:38:52.613] CONECTOU  -> PRELOADER MediaTek - o chip está vivo; dá para regravar o firmware com SP Flash Tool/mtkclient
+[10:38:52.614]              MT65xx Preloader  [USB\VID_0E8D&PID_2000\6&C1A2E2F&0&4]  status: Error
+[10:38:52.614]              Atenção: o Windows não tem driver para este modo (normal para Preloader/BROM sem drivers MTK).
+[10:39:00.185] DESCONECTOU <- MT65xx Preloader
+[10:39:15.909] CONECTOU  -> BROM (modo de emergência MediaTek) - dá para regravar tudo com mtkclient/SP Flash Tool
+[10:39:15.910]              USB Serial Device (COM3)  [USB\VID_0E8D&PID_0003\6&C1A2E2F&0&4]  status: OK
+[10:39:20.852] DESCONECTOU <- USB Serial Device (COM3)
+[10:39:22.086] CONECTOU  -> PRELOADER MediaTek - o chip está vivo; dá para regravar o firmware com SP Flash Tool/mtkclient
+[10:39:22.088]              MT65xx Preloader  [USB\VID_0E8D&PID_2000\6&C1A2E2F&0&4]  status: Error
+[10:39:22.088]              Atenção: o Windows não tem driver para este modo (normal para Preloader/BROM sem drivers MTK).
+[10:39:29.896] DESCONECTOU <- MT65xx Preloader
