@@ -39,3 +39,25 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
    modo **Download Only**, com `nvram`, `nvdata`, `proinfo`, `protect1` e `protect2` **desmarcados**.
 
 **Nunca** enviar a pasta `backup\` para o GitHub (tem o IMEI).
+
+## Histórico de tentativas
+- **14/10/2026:** gravado o `boot.img` da ROM `Infinix_Hot_11S_NFC_X6812B_MT6768_V347_20210927`
+  em `boot_a` e `boot_b` (100%, sem erro). Resultado: LED aceso direto, tela preta e não liga.
+  Causa provável: a V347 é de **set/2021** e o resto do aparelho (LK de 06/05/2022) é mais
+  novo. O kernel antigo não combina com o vendor e o super mais novos.
+  **Próximo passo:** usar uma ROM de 05/2022 ou mais nova, de preferência a mais recente
+  da mesma região, e gravá-la **inteira**, sem as partições de IMEI.
+- **14/10/2026:** baixada a ROM `Infinix_Hot_11S_NFC_X6812B_MT6768_OP_V1218_241128` (nov/2024).
+  Criada a **opção 9** (`tools/gravar_rom.py`). Ela monta um plano, pula as partições de
+  IMEI, o preloader e os dados do usuário, grava cada imagem nos slots A e B e desempacota
+  imagens sparse. Antes de gravar, confere se o slot ativo combina com o `super.img`.
+- **14/10/2026:** plano da V1218 conferido. Todos os tamanhos batem com o aparelho, mas o
+  `super.img` só tem sistema no **slot A** (`system_a`, `vendor_a`, `product_a`,
+  `system_ext_a`; os `_b` estão vazios). O `misc` (controle A/B padrão do Android, offset 0x800,
+  CRC conferido) mostra prioridade A=14 e B=15, ou seja, o aparelho está no **slot B**.
+  A opção 9 agora também grava `backup\misc_slot_a.bin`, uma cópia do `misc` em que só mudam
+  as prioridades (A=15, B=14) e o CRC.
+- **14/10/2026:** a gravação do `super` (7 GB) caía no meio e a opção 9 recomeçava do zero,
+  porque só pulava partições inteiras. Corrigido: o `super` agora é dividido em pedaços de 256 MB,
+  gravados com `wo` numa única conexão (`mtk.py script`). Cada pedaço confirmado é anotado na
+  hora em `logs\rom_gravadas.txt`, e a próxima rodada continua do pedaço seguinte.

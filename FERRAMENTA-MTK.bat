@@ -26,7 +26,8 @@ echo   5. Reler a particao nvdata e verificar se esta vazia (so leitura)
 echo   6. Ler logs de travamento (expdb/misc) e analisar (so leitura)
 echo   7. Ler e verificar imagens de boot dos slots A e B (so leitura)
 echo   8. Gravar boot.img de ESTOQUE nos slots A e B (corrige o bootloop)
-echo   9. Sair
+echo   9. Gravar a ROM de estoque INTEIRA (sem IMEI, preloader e dados)
+echo  10. Sair
 echo.
 echo   Depois de escolher, CONECTE o cabo USB quando aparecer
 echo   "Waiting for device"/"Preloader". Se nao conectar, desligue e
@@ -42,7 +43,44 @@ if "%OP%"=="5" goto nvdata
 if "%OP%"=="6" goto logs
 if "%OP%"=="7" goto bootimg
 if "%OP%"=="8" goto gravarboot
-if "%OP%"=="9" exit /b 0
+if "%OP%"=="9" goto gravarrom
+if "%OP%"=="10" exit /b 0
+goto menu
+
+:gravarrom
+if not exist logs mkdir logs
+echo.
+set "ROM=%~dp0firmware\rom"
+if not exist "%ROM%" (
+  echo [ERRO] Extraia o .zip da ROM dentro de:
+  echo        %ROM%
+  pause
+  goto menu
+)
+echo Montando o plano - nada e gravado nesta etapa...
+"%PY%" "%~dp0tools\gravar_rom.py" "%ROM%" "logs\particoes.txt" > logs\plano_rom.txt 2>&1
+set "PLANO=%errorlevel%"
+type logs\plano_rom.txt
+echo.
+echo O plano foi salvo em logs\plano_rom.txt
+if not "%PLANO%"=="0" (
+  echo [CANCELADO] O plano tem problemas. Mande logs\plano_rom.txt para o Claude.
+  pause
+  goto menu
+)
+echo.
+echo  Isto grava as particoes marcadas como "grava" acima. Nao mexe no
+echo  IMEI, no preloader nem nos seus arquivos. Pode levar 20-30 minutos.
+echo.
+set /p CONF="Digite GRAVAR para confirmar: "
+if /i not "%CONF%"=="GRAVAR" (
+  echo Cancelado.
+  pause
+  goto menu
+)
+"%PY%" "%~dp0tools\gravar_rom.py" "%ROM%" "logs\particoes.txt" --executar "%PY%" "%MTK%"
+echo.
+pause
 goto menu
 
 :gravarboot
