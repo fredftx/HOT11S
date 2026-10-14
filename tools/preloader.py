@@ -94,22 +94,25 @@ def montar_imagem(atual, novo):
     print(f"   tamanho do preloader: atual {tam_velho} bytes, ROM {tam_novo} bytes")
     print(f"   BRLYT atual: {atual[brlyt:brlyt + 0x30].hex(' ')}")
 
-    cabecalho = bytearray(atual[:inicio])
-    # o BRLYT guarda o fim do preloader (exato ou alinhado); troca pelo fim do novo
-    trocas = []
-    for alinhar in (1, 0x200, 0x1000):
-        fim_velho = -(-(inicio + tam_velho) // alinhar) * alinhar
-        fim_novo = -(-(inicio + tam_novo) // alinhar) * alinhar
-        for pos in range(brlyt, len(cabecalho) - 3, 4):
-            if struct.unpack_from("<I", cabecalho, pos)[0] == fim_velho and pos not in [t[0] for t in trocas]:
-                trocas.append((pos, fim_velho, fim_novo))
-    if len(trocas) != 1:
-        print(f"[ERRO] Esperava 1 campo de fim do preloader no BRLYT, achei {len(trocas)}. "
-              "NAO grave; mande este print para o Claude.")
+    # descritor do preloader no BRLYT: "BBBB", dispositivo, tipo, comeco, limite, atributo
+    desc = brlyt + 0x14
+    if atual[desc:desc + 4] != b"BBBB":
+        print("[ERRO] Descritor BBBB nao encontrado no BRLYT. NAO grave; mande este print para o Claude.")
         return None
-    pos, fim_velho, fim_novo = trocas[0]
-    struct.pack_into("<I", cabecalho, pos, fim_novo)
-    print(f"   fim do preloader no BRLYT (0x{pos:x}): 0x{fim_velho:x} -> 0x{fim_novo:x}")
+    comeco, limite = struct.unpack_from("<II", atual, desc + 8)
+    if comeco != inicio or limite <= comeco:
+        print(f"[ERRO] Descritor inesperado (comeco 0x{comeco:x}, limite 0x{limite:x}). NAO grave.")
+        return None
+    espaco = limite - comeco
+    print(f"   area reservada ao preloader: 0x{comeco:x}-0x{limite:x} ({espaco} bytes)")
+    if tam_novo > espaco:
+        print("[ERRO] O preloader da ROM nao cabe na area reservada. NAO grave.")
+        return None
+    if tam_velho > espaco:
+        print("[ERRO] O preloader atual nao bate com a area reservada; caso nao previsto. NAO grave.")
+        return None
+    print("   o preloader novo cabe na area: o cabecalho fica igual ao do aparelho")
+    cabecalho = atual[:inicio]
 
     imagem = bytes(cabecalho) + novo
     # apaga as sobras do preloader antigo, se o novo for menor

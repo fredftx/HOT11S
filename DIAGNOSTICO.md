@@ -72,3 +72,6 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   é de **2024-11-27**. O arquivo da ROM vem sem o cabeçalho `EMMC_BOOT`/`BRLYT` da área boot1,
   então a ferramenta agora monta a imagem: o cabeçalho do próprio aparelho, com o campo de
   fim do preloader no `BRLYT` atualizado, mais o preloader da ROM.
+- **14/10/2026:** o `BRLYT` real reserva uma área fixa para o preloader (0x800–0x80800, 512 KB),
+  e não o tamanho exato. O preloader da V1218 (309036 bytes) cabe nela, então o cabeçalho fica
+  igual. A opção 10 agora lê o descritor `BBBB` diretamente.
