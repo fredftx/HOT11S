@@ -60,7 +60,7 @@ if not "%SZ%"=="4194304" (
   "%PY%" "%MTK%" r preloader backup\preloader_boot1_atual.bin --parttype boot1
 )
 echo.
-"%PY%" "%~dp0tools\preloader.py" "%~dp0firmware\rom" "backup\preloader_boot1_atual.bin" "firmware\preloader_rom.bin"
+"%PY%" "%~dp0tools\preloader.py" "%~dp0firmware\rom" "backup\preloader_boot1_atual.bin" "firmware\preloader_boot1_novo.bin"
 if errorlevel 1 (
   echo.
   echo [CANCELADO] Nada foi gravado. Mande um print desta tela para o Claude.
@@ -78,7 +78,7 @@ if /i not "%CONF%"=="GRAVAR" (
   goto menu
 )
 echo Passo 2 de 2: DESCONECTE e conecte de novo segurando VOLUME + e VOLUME - .
-"%PY%" "%MTK%" w preloader firmware\preloader_rom.bin --parttype boot1
+"%PY%" "%MTK%" w preloader firmware\preloader_boot1_novo.bin --parttype boot1
 echo.
 echo Pronto. Desconecte o cabo e ligue o aparelho segurando POWER.
 pause

@@ -68,3 +68,7 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   ou no TEE/ATF. Suspeita principal: o **preloader de 2022**, mantido por segurança, não
   combina com o `lk`/`tee` de 2024. Criada a **opção 10**: ela lê o preloader atual (boot1),
   compara com o da ROM e grava o da ROM.
+- **14/10/2026:** opção 10, leitura OK. O preloader do aparelho é de **2022-08-23**, o da V1218
+  é de **2024-11-27**. O arquivo da ROM vem sem o cabeçalho `EMMC_BOOT`/`BRLYT` da área boot1,
+  então a ferramenta agora monta a imagem: o cabeçalho do próprio aparelho, com o campo de
+  fim do preloader no `BRLYT` atualizado, mais o preloader da ROM.
