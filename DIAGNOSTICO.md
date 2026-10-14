@@ -86,3 +86,10 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   **Próximo passo:** 2 a 3 h no carregador de tomada, sem mexer. Se a luz continuar apagando na
   hora sem o cabo, trocar a bateria. As gravações (V1218, slot A, preloader novo) continuam
   no aparelho.
+- **14/10/2026:** depois de 2 a 3 h no carregador de tomada, nada mudou: a luz não muda e apaga
+  na hora sem o cabo. Nem o BROM aparece no USB. Conclusão: a **bateria não está recebendo nem
+  segurando carga** (descarga profunda com a proteção desligada, ou bateria com defeito).
+  **Próximo passo:** carregar a noite toda com outro carregador e outro cabo. Se continuar igual,
+  testar ou trocar a bateria numa assistência, sem regravar firmware. Depois, rodar o
+  `INICIAR-DIAGNOSTICO.bat` e a opção 11. Parte do bootloop pode ter sido causada pela própria
+  bateria fraca.
