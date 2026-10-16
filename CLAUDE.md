@@ -11,7 +11,7 @@ para continuar.
 
 ---
 
-## Situação atual (14/10/2026, fim do dia)
+## Situação atual (16/10/2026)
 
 **O problema agora é a bateria, não o software.**
 
@@ -20,6 +20,10 @@ para continuar.
 - Não aparece **nada** no USB: nem Preloader, nem BROM (com VOL+ e VOL- seguros).
 - Conclusão: a bateria não recebe nem segura carga (descarga profunda com a proteção desligada,
   ou bateria com defeito). Pode ter contribuído para os bootloops.
+- O `expdb` antigo (commit `c32281c`) já mostrava a bateria reconhecida (`bat is exist`), mas
+  instável: 4,30 V → **3,37 V** dentro do mesmo boot, abaixo do limite de 3,4 V. Indica bateria
+  desgastada, com resistência interna alta. Linhas úteis para procurar:
+  `pl_check_bat_protect_status`, `get_bat_volt`, `boot_voltage`, `bat is exist`.
 - **Próximo passo combinado:** carregar a noite toda com outro carregador e outro cabo. Se
   continuar igual, levar a uma assistência para **testar com fonte de bancada** e/ou **trocar a
   bateria** (modelo escrito na etiqueta da bateria atual). Pedir ao técnico para **não

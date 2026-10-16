@@ -93,3 +93,10 @@ caía no meio. A última leitura do `boot_b` chegou a 100% (`leitura_boot_b.txt`
   testar ou trocar a bateria numa assistência, sem regravar firmware. Depois, rodar o
   `INICIAR-DIAGNOSTICO.bat` e a opção 11. Parte do bootloop pode ter sido causada pela própria
   bateria fraca.
+- **16/10/2026:** análise da bateria no `expdb` antigo (o enviado em 14/10 de manhã, com o sistema
+  de 2022). Em toda inicialização o preloader registra `bat is exist`, ou seja, a bateria era
+  reconhecida. Tensões: preloader 3727–3729 mV (algumas vezes 4286–4297 mV, carregando com VCHR
+  4,5–5,0 V); LK no mesmo boot 4202 → 4148 → 3748 → 4078 → **3371** → 3764 mV. A variação grande e
+  a queda abaixo do limite de bateria baixa (3400 mV) indicam **bateria desgastada, com
+  resistência interna alta**, provavelmente já antes de tudo. Confirmar com multímetro ou fonte de
+  bancada na assistência.
